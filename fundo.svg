@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640">
+  <!-- Padrão de fundo: gravuras de linha sobre o tema escrita, livros e estudo clássico. Desenho original. -->
+  <g fill="none" stroke="#B5603C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".14">
+
+    <!-- pena -->
+    <g transform="translate(40 40) rotate(-28)">
+      <path d="M0 120 L 0 0"/>
+      <path d="M0 8 C 26 20, 34 52, 22 96 C 16 88, 8 86, 0 88"/>
+      <path d="M0 8 C -22 24, -26 58, -14 96 C -10 90, -5 88, 0 88"/>
+      <path d="M0 30 L 18 24 M0 46 L 24 40 M0 62 L 24 58 M0 78 L 20 76 M0 34 L -16 28 M0 52 L -20 48 M0 70 L -18 68"/>
+    </g>
+
+    <!-- tinteiro -->
+    <g transform="translate(150 70)">
+      <path d="M10 22 h 40 v 10 c 14 6 18 16 18 30 v 18 c 0 8 -6 12 -14 12 h -48 c -8 0 -14 -4 -14 -12 v -18 c 0 -14 4 -24 18 -30 z"/>
+      <path d="M14 22 v -10 h 32 v 10"/>
+      <path d="M-4 62 h 72 M2 74 h 60"/>
+    </g>
+
+    <!-- letras serifadas grandes -->
+    <g fill="#B5603C" stroke="none" font-family="Georgia, 'Times New Roman', serif">
+      <text x="300" y="120" font-size="96">A</text>
+      <text x="300" y="290" font-size="84">B</text>
+      <text x="40" y="420" font-size="90">Q</text>
+      <text x="430" y="600" font-size="80">R</text>
+      <text x="250" y="380" font-size="70" font-style="italic">a</text>
+      <text x="580" y="80" font-size="40" font-style="italic">g</text>
+    </g>
+    <!-- letras pequenas, como tipos soltos -->
+    <g fill="#3B2A1F" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="18" opacity=".8">
+      <text x="410" y="40">J</text><text x="130" y="230">M</text><text x="590" y="240">Z</text>
+      <text x="600" y="400">K</text><text x="200" y="560">N</text><text x="330" y="470">V</text><text x="20" y="250">p</text>
+    </g>
+
+    <!-- livro aberto -->
+    <g transform="translate(400 120)">
+      <path d="M0 20 C 30 6, 60 8, 80 22 C 100 8, 130 6, 160 20 V 86 C 130 72, 100 74, 80 88 C 60 74, 30 72, 0 86 Z"/>
+      <path d="M80 22 V 88"/>
+      <path d="M16 32 C 34 26, 52 28, 68 34 M16 44 C 34 38, 52 40, 68 46 M16 56 C 34 50, 52 52, 68 58 M92 34 C 108 28, 126 26, 144 32 M92 46 C 108 40, 126 38, 144 44 M92 58 C 108 52, 126 50, 144 56"/>
+    </g>
+
+    <!-- coluna jônica -->
+    <g transform="translate(180 250)">
+      <path d="M-6 0 h 84"/>
+      <path d="M2 0 c -14 0 -16 20 -2 20 c 8 0 8 -10 2 -10"/>
+      <path d="M70 0 c 14 0 16 20 2 20 c -8 0 -8 -10 -2 -10"/>
+      <path d="M8 14 h 56 M10 22 h 52"/>
+      <path d="M14 22 V 150 M58 22 V 150 M24 26 V 146 M36 26 V 146 M48 26 V 146"/>
+      <path d="M8 150 h 56 M2 160 h 68 M-4 170 h 80"/>
+    </g>
+
+    <!-- pilha de livros -->
+    <g transform="translate(440 300)">
+      <rect x="0" y="0" width="130" height="24" rx="3"/>
+      <rect x="10" y="24" width="120" height="22" rx="3"/>
+      <rect x="-6" y="46" width="138" height="26" rx="3"/>
+      <path d="M14 6 V 18 M22 6 V 18 M110 6 V 18 M26 30 V 40 M116 30 V 40 M8 52 V 66 M18 52 V 66 M116 52 V 66"/>
+      <path d="M40 12 h 50 M44 35 h 46 M34 59 h 60"/>
+    </g>
+
+    <!-- blocos de texto -->
+    <g stroke-width="2.2" opacity=".75">
+      <path d="M300 160 h 70 M300 170 h 56 M300 180 h 66 M300 190 h 40 M300 200 h 62"/>
+      <path d="M40 470 h 80 M40 480 h 64 M40 490 h 74 M40 500 h 50"/>
+      <path d="M520 450 h 70 M520 460 h 58 M520 470 h 66"/>
+      <path d="M330 520 h 60 M330 530 h 72 M330 540 h 48"/>
+      <path d="M40 300 h 60 M40 310 h 48 M40 320 h 56"/>
+    </g>
+
+    <!-- rosa dos ventos -->
+    <g transform="translate(140 600)">
+      <circle r="30"/><circle r="22"/>
+      <path d="M0 -42 L 6 0 L 0 42 L -6 0 Z M-42 0 L 0 -6 L 42 0 L 0 6 Z"/>
+      <path d="M-20 -20 L 20 20 M20 -20 L -20 20" stroke-width="1"/>
+    </g>
+
+    <!-- lupa -->
+    <g transform="translate(370 400)">
+      <circle cx="30" cy="30" r="28"/><circle cx="30" cy="30" r="22" stroke-width="1"/>
+      <path d="M50 50 L 86 86" stroke-width="5"/>
+      <path d="M16 22 c 4 -8 12 -12 20 -10" stroke-width="1.2"/>
+    </g>
+
+    <!-- ramo -->
+    <g transform="translate(560 520)">
+      <path d="M0 80 C 10 50, 10 20, 30 0"/>
+      <path d="M6 58 c -16 -2 -22 -12 -20 -20 c 10 2 18 10 20 20 z"/>
+      <path d="M12 36 c 14 -6 24 -2 26 6 c -10 4 -20 2 -26 -6 z"/>
+      <path d="M20 16 c -12 -8 -14 -18 -10 -22 c 8 4 12 12 10 22 z"/>
+    </g>
+
+    <!-- floreio de capitular -->
+    <g transform="translate(250 30)">
+      <path d="M0 30 C 0 10, 20 0, 32 8 C 44 16, 34 30, 24 26 C 18 24, 20 16, 26 18"/>
+    </g>
+  </g>
+</svg>
