@@ -185,6 +185,46 @@ section{padding-block:3.5rem}
 .book .buy{font-size:.85rem;font-weight:700;color:var(--brown)}
 .book:hover .buy{text-decoration:underline;text-decoration-color:var(--ochre);text-decoration-thickness:2px}
 
+
+/* estante */
+.shelf-hint{font-family:var(--hand);font-size:1.45rem;color:var(--clay);margin-bottom:.6rem}
+.estante{position:relative;overflow-x:auto;overflow-y:hidden;padding-top:1.4rem;scrollbar-width:thin}
+.row{display:flex;align-items:flex-end;gap:3px;padding-inline:1.2rem;min-width:max-content;height:18.5rem}
+.spine{position:relative;width:var(--w);height:var(--h);background:var(--bg);color:var(--fg);border:0;border-radius:3px 3px 0 0;padding:.9rem 0 .7rem;display:flex;flex-direction:column;align-items:center;gap:.6rem;cursor:pointer;box-shadow:inset 3px 0 0 rgba(255,255,255,.14),inset -4px 0 0 rgba(0,0,0,.18),0 -1px 0 rgba(0,0,0,.08);transition:transform .25s cubic-bezier(.3,1.4,.5,1),box-shadow .2s;font-family:var(--sans)}
+.spine:nth-child(3n+2){transform:rotate(-1.2deg);transform-origin:bottom right}
+.spine:hover{transform:translateY(-10px)}
+.spine[aria-pressed="true"]{transform:translateY(-22px);box-shadow:inset 3px 0 0 rgba(255,255,255,.14),inset -4px 0 0 rgba(0,0,0,.18),0 10px 18px -6px rgba(44,33,25,.55)}
+.spine .band{flex:none;width:100%;height:5px;border-block:1.5px solid currentColor;opacity:.55}
+.spine .sv{flex:1;min-height:0;writing-mode:vertical-rl;transform:rotate(180deg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.25rem;text-align:center;padding-block:.2rem;overflow:hidden}
+.spine .sv b{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:1.08rem;line-height:1.02;letter-spacing:.01em}
+.spine .sv i{font-style:normal;font-family:var(--hand);font-size:.98rem;line-height:1;opacity:.85}
+.spine .sa{flex:none;font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:.72rem;border:1px solid currentColor;padding:.05rem .2rem;opacity:.8}
+.bookend{flex:none;width:2.4rem;height:9rem;margin-left:.6rem;background:var(--ochre);clip-path:polygon(0 0,35% 0,35% 78%,100% 78%,100% 100%,0 100%);opacity:.9}
+.plank{height:16px;background:linear-gradient(var(--brown),#5E3820);border-radius:2px;box-shadow:0 8px 10px -6px rgba(44,33,25,.6);position:relative}
+.plank::after{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:rgba(255,255,255,.18)}
+.pick{display:grid;grid-template-columns:minmax(0,13rem) minmax(0,1fr);gap:2rem;align-items:center;margin-top:2rem;padding:1.5rem;background:var(--card);border:1.5px solid var(--sand);border-radius:14px}
+.pick-cover img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;background:var(--beige);box-shadow:0 18px 26px -18px rgba(44,33,25,.75);max-width:100%}
+.pick-cover img.contain{object-fit:contain;padding:.4rem}
+.pick-body{display:grid;gap:.45rem;align-content:center;min-width:0}
+.pick-body .ed{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--clay)}
+.pick-body h3{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(1.8rem,4.5vw,2.4rem);font-weight:600;line-height:1}
+.pick-body .sub{font-family:var(--hand);font-size:1.45rem;color:var(--clay);line-height:1}
+.pick-body p{color:var(--ink-2);max-width:34rem}
+.pick-act{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem 1.2rem;margin-top:.5rem}
+.nav2{display:flex;gap:.45rem}
+.nav2 button{width:2.5rem;height:2.5rem;border-radius:50%;border:2px solid var(--ink);background:var(--paper);font-size:1rem;cursor:pointer;color:var(--ink)}
+.nav2 button:hover{background:var(--mark)}
+.pick.swap .pick-cover img,.pick.swap .pick-body{animation:pickin .35s ease}
+@keyframes pickin{from{opacity:.2;transform:translateY(6px)}to{opacity:1;transform:none}}
+.shops{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;margin-top:1.1rem;font-size:.9rem;font-weight:700}
+@media (max-width:640px){
+  .row{height:15rem;gap:2px}
+  .spine{width:calc(var(--w)*.82);height:calc(var(--h)*.82)}
+  .spine .sv b{font-size:.95rem}.spine .sv i{font-size:.88rem}
+  .pick{grid-template-columns:1fr;gap:1.2rem;padding:1.2rem}
+  .pick-cover{max-width:11rem}
+}
+
 /* cursos */
 .courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:2.25rem}
 .course{margin:7px;padding:1.4rem 1.35rem;display:flex;flex-direction:column;gap:.75rem;min-width:0;position:relative}
@@ -547,64 +587,22 @@ footer .hand{font-size:1.4rem}
 
   <section id="livros" aria-labelledby="t-livros">
     <div class="head"><h2 id="t-livros">Livros</h2><span class="pred">para estudar a língua pela Palavra</span></div>
-
-    <div class="press">
-      <div class="press-head">
-        <h3>Classical Press <span class="hand">a coleção de gramática</span></h3>
-        <a href="https://loja.classicalpress.com.br/search?q=gram%C3%A1tica+em+diagramas" target="_blank" rel="noopener">Ver na loja da editora ↗</a>
-      </div>
-      <div class="books">
-        <a class="book" href="https://loja.classicalpress.com.br/produtos/gramatica-diagramas-vol-1/" target="_blank" rel="noopener">
-          <div class="shelf"><div class="shot"><img src="capas/gd1.jpg" alt="Capa do livro Gramática em Diagramas, volume 1" loading="lazy"></div></div>
-          <div class="meta"><b>Gramática em Diagramas, vol. 1</b>Guia de gramática para consulta rápida</div>
-          <span class="buy">Comprar ↗</span>
-        </a>
-        <a class="book" href="https://loja.classicalpress.com.br/produtos/gramatica-diagramas-vol-2/" target="_blank" rel="noopener">
-          <div class="shelf"><div class="shot"><img src="capas/gd2.jpg" alt="Capa do livro Gramática em Diagramas, volume 2" loading="lazy"></div></div>
-          <div class="meta"><b>Gramática em Diagramas, vol. 2</b>A continuação do guia, com construções mais complexas</div>
-          <span class="buy">Comprar ↗</span>
-        </a>
-        <a class="book" href="https://loja.classicalpress.com.br/produtos/gramatica-diagramas-mapas-tabelas-memorizacao/" target="_blank" rel="noopener">
-          <div class="shelf"><div class="shot"><img src="capas/gdmap.jpg" alt="Capa do livro Gramática em Diagramas: Mapas e Tabelas de Memorização" loading="lazy"></div></div>
-          <div class="meta"><b>Mapas e Tabelas de Memorização</b>Referência rápida para revisar o trivium</div>
-          <span class="buy">Comprar ↗</span>
-        </a>
-      </div>
+    <p class="shelf-hint">Escolha uma lombada para ver o livro.</p>
+    <div class="estante">
+      <div class="row" role="group" aria-label="Estante de livros"><button class="spine" type="button" style="--bg:#B5603C;--fg:#EDE3D0;--w:3.6rem;--h:15.5rem" aria-pressed="true" data-i="0" aria-label="Gramática em Diagramas vol. 1"><span class="band"></span><span class="sv"><b>Gramática em Diagramas</b><i>vol. 1</i></span><span class="band"></span><span class="sa">AB</span></button><button class="spine" type="button" style="--bg:#8E4529;--fg:#EDE3D0;--w:3.6rem;--h:15.5rem" aria-pressed="false" data-i="1" aria-label="Gramática em Diagramas vol. 2"><span class="band"></span><span class="sv"><b>Gramática em Diagramas</b><i>vol. 2</i></span><span class="band"></span><span class="sa">AB</span></button><button class="spine" type="button" style="--bg:#C1923A;--fg:#2C2119;--w:3.1rem;--h:14rem" aria-pressed="false" data-i="2" aria-label="Mapas e Tabelas Gramática em Diagramas"><span class="band"></span><span class="sv"><b>Mapas e Tabelas</b><i>Gramática em Diagramas</i></span><span class="band"></span><span class="sa">AB</span></button><button class="spine" type="button" style="--bg:#79744A;--fg:#F5F0E6;--w:4.2rem;--h:16.5rem" aria-pressed="false" data-i="3" aria-label="Português em Mapas pela Bíblia"><span class="band"></span><span class="sv"><b>Português em Mapas</b><i>pela Bíblia</i></span><span class="band"></span><span class="sa">AB</span></button><button class="spine" type="button" style="--bg:#A3A07A;--fg:#2C2119;--w:3rem;--h:16.5rem" aria-pressed="false" data-i="4" aria-label="Caderno de Exercícios Português em Mapas"><span class="band"></span><span class="sv"><b>Caderno de Exercícios</b><i>Português em Mapas</i></span><span class="band"></span><span class="sa">AB</span></button><button class="spine" type="button" style="--bg:#7A4A2A;--fg:#EDE3D0;--w:3.4rem;--h:15rem" aria-pressed="false" data-i="5" aria-label="100 Provérbios para Diagramar"><span class="band"></span><span class="sv"><b>100 Provérbios</b><i>para Diagramar</i></span><span class="band"></span><span class="sa">AB</span></button><button class="spine" type="button" style="--bg:#D9C6A3;--fg:#2C2119;--w:3rem;--h:13.5rem" aria-pressed="false" data-i="6" aria-label="Provérbios Nosso de Cada Dia"><span class="band"></span><span class="sv"><b>Provérbios</b><i>nosso de cada dia</i></span><span class="band"></span><span class="sa">AB</span></button><button class="spine" type="button" style="--bg:#3B2A1F;--fg:#C1923A;--w:3.1rem;--h:14.5rem" aria-pressed="false" data-i="7" aria-label="Socialização Escolar a socialização que não deu certo"><span class="band"></span><span class="sv"><b>Socialização Escolar</b><i>Adna S. Barbosa</i></span><span class="band"></span><span class="sa">AB</span></button><span class="bookend" aria-hidden="true"></span></div>
+      <div class="plank" aria-hidden="true"></div>
     </div>
-
-    <div class="press">
-      <div class="press-head">
-        <h3>Voz que Clama <span class="hand">português pela Bíblia</span></h3>
-        <a href="https://www.vozqueclama.com.br/livros" target="_blank" rel="noopener">Ver todos na loja ↗</a>
+    <article class="pick" id="pick" aria-live="polite">
+      <div class="pick-cover"><img id="pick-img" src="capas/gd1.jpg" alt="Capa do livro Gramática em Diagramas vol. 1"></div>
+      <div class="pick-body">
+        <span class="ed" id="pick-ed">Classical Press</span>
+        <h3 id="pick-t">Gramática em Diagramas</h3>
+        <span class="sub" id="pick-sub">vol. 1</span>
+        <p id="pick-d">Guia de gramática para consulta rápida, com a análise das frases feita em diagramas.</p>
+        <div class="pick-act"><a class="btn solid" id="pick-u" href="https://loja.classicalpress.com.br/produtos/gramatica-diagramas-vol-1/" target="_blank" rel="noopener">Comprar na editora ↗</a><span class="nav2"><button type="button" id="prev" aria-label="Livro anterior">←</button><button type="button" id="next" aria-label="Próximo livro">→</button></span></div>
       </div>
-      <div class="books">
-        <a class="book" href="https://www.vozqueclama.com.br/livros/portugues-em-mapas-pela-biblia" target="_blank" rel="noopener">
-          <div class="shelf"><div class="shot"><img src="capas/pemb.jpg" alt="Capa do livro Português em Mapas pela Bíblia" loading="lazy"></div></div>
-          <div class="meta"><b>Português em Mapas pela Bíblia</b>O livro que abre a coleção</div>
-          <span class="buy">Comprar ↗</span>
-        </a>
-        <a class="book" href="https://www.vozqueclama.com.br/livros/portugues-em-mapas-pela-bibia-caderno-de-exercicios" target="_blank" rel="noopener">
-          <div class="shelf"><div class="shot"><img src="capas/pembcad.jpg" alt="Capa do livro Português em Mapas pela Bíblia: Caderno de Exercícios" loading="lazy"></div></div>
-          <div class="meta"><b>Caderno de Exercícios</b>Prática para acompanhar o livro. Também vendido em combo</div>
-          <span class="buy">Comprar ↗</span>
-        </a>
-        <a class="book" href="https://www.vozqueclama.com.br/livros/100-proverbios-para-diagramar" target="_blank" rel="noopener">
-          <div class="shelf"><div class="shot contain"><img src="capas/prov100.jpg" alt="Capa do livro 100 Provérbios para Diagramar" loading="lazy"></div></div>
-          <div class="meta"><b>100 Provérbios para Diagramar</b>Exercícios de diagramação com a sabedoria de Provérbios</div>
-          <span class="buy">Comprar ↗</span>
-        </a>
-        <a class="book" href="https://www.vozqueclama.com.br/livros/proverbios-nosso-de-cada-dia" target="_blank" rel="noopener">
-          <div class="shelf"><div class="shot"><img src="capas/provdia.jpg" alt="Capa do livro Provérbios Nosso de Cada Dia" loading="lazy"></div></div>
-          <div class="meta"><b>Provérbios Nosso de Cada Dia</b>Impresso ou em PDF</div>
-          <span class="buy">Comprar ↗</span>
-        </a>
-        <a class="book" href="https://www.vozqueclama.com.br/livros/socializacao-escolar-a-socializacao-que-nao-deu-certo" target="_blank" rel="noopener">
-          <div class="shelf"><div class="shot"><img src="capas/social.jpg" alt="Capa do livro Socialização Escolar: a socialização que não deu certo" loading="lazy"></div></div>
-          <div class="meta"><b>Socialização Escolar</b>Um olhar sobre a escola e a educação em família</div>
-          <span class="buy">Comprar ↗</span>
-        </a>
-      </div>
-    </div>
+    </article>
+    <div class="shops"><a href="https://loja.classicalpress.com.br/search?q=gram%C3%A1tica+em+diagramas" target="_blank" rel="noopener">Loja Classical Press ↗</a><a href="https://www.vozqueclama.com.br/livros" target="_blank" rel="noopener">Loja Voz que Clama ↗</a></div>
   </section>
 
   <section id="cursos" aria-labelledby="t-cursos">
@@ -822,6 +820,22 @@ function set(o){nav.classList.toggle('open',o);btn.setAttribute('aria-expanded',
 btn.addEventListener('click',function(){set(!nav.classList.contains('open'))});
 nav.addEventListener('click',function(e){if(e.target.closest('a'))set(false)});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});})();
+
+(function(){var B=[{c:"gd1",t:"Gramática em Diagramas",sub:"vol. 1",ed:"Classical Press",d:"Guia de gramática para consulta rápida, com a análise das frases feita em diagramas.",u:"https://loja.classicalpress.com.br/produtos/gramatica-diagramas-vol-1/",fit:""},
+{c:"gd2",t:"Gramática em Diagramas",sub:"vol. 2",ed:"Classical Press",d:"A continuação do guia, com construções mais complexas.",u:"https://loja.classicalpress.com.br/produtos/gramatica-diagramas-vol-2/",fit:""},
+{c:"gdmap",t:"Mapas e Tabelas",sub:"Gramática em Diagramas",ed:"Classical Press",d:"Tabela de referência rápida para revisar o trivium.",u:"https://loja.classicalpress.com.br/produtos/gramatica-diagramas-mapas-tabelas-memorizacao/",fit:""},
+{c:"pemb",t:"Português em Mapas",sub:"pela Bíblia",ed:"Voz que Clama",d:"O livro que abre a coleção: a língua portuguesa estudada com textos das Escrituras.",u:"https://www.vozqueclama.com.br/livros/portugues-em-mapas-pela-biblia",fit:""},
+{c:"pembcad",t:"Caderno de Exercícios",sub:"Português em Mapas",ed:"Voz que Clama",d:"Prática para acompanhar o livro. Também vendido em combo com ele.",u:"https://www.vozqueclama.com.br/livros/portugues-em-mapas-pela-bibia-caderno-de-exercicios",fit:""},
+{c:"prov100",t:"100 Provérbios",sub:"para Diagramar",ed:"Voz que Clama",d:"Exercícios de diagramação com a sabedoria de Provérbios. Ampliado, com gabarito.",u:"https://www.vozqueclama.com.br/livros/100-proverbios-para-diagramar",fit:"contain"},
+{c:"provdia",t:"Provérbios",sub:"Nosso de Cada Dia",ed:"Voz que Clama",d:"Um provérbio para cada dia, para ler e memorizar em família. Impresso ou em PDF.",u:"https://www.vozqueclama.com.br/livros/proverbios-nosso-de-cada-dia",fit:""},
+{c:"social",t:"Socialização Escolar",sub:"a socialização que não deu certo",ed:"Voz que Clama",d:"Um olhar sobre a escola e a educação em família.",u:"https://www.vozqueclama.com.br/livros/socializacao-escolar-a-socializacao-que-nao-deu-certo",fit:""}];var cur=0;var sp=[].slice.call(document.querySelectorAll('.spine'));var pick=document.getElementById('pick');
+function show(i,scroll){cur=(i+B.length)%B.length;var b=B[cur];sp.forEach(function(x,k){x.setAttribute('aria-pressed',k===cur?'true':'false')});
+var im=document.getElementById('pick-img');im.src='capas/'+b.c+'.jpg';im.alt='Capa do livro '+b.t+' '+b.sub;im.className=b.fit;
+document.getElementById('pick-ed').textContent=b.ed;document.getElementById('pick-t').textContent=b.t;document.getElementById('pick-sub').textContent=b.sub;document.getElementById('pick-d').textContent=b.d;document.getElementById('pick-u').href=b.u;
+pick.classList.remove('swap');void pick.offsetWidth;pick.classList.add('swap');
+if(scroll&&window.matchMedia('(max-width:640px)').matches){pick.scrollIntoView({behavior:'smooth',block:'nearest'})}}
+sp.forEach(function(x,k){x.addEventListener('click',function(){show(k,true)})});
+document.getElementById('prev').addEventListener('click',function(){show(cur-1)});document.getElementById('next').addEventListener('click',function(){show(cur+1)});})();
 </script>
 
 </body>

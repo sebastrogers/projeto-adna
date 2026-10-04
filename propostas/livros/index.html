@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+</head>
+<body style="margin:0">
+<title>Adna Barbosa · Livros</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cormorant+Garamond:wght@500;600&family=Open+Sans:wght@400;600;700;800&display=swap">
+<style>
+/* Comparação de 4 formatos para a seção de livros, na paleta do site. */
+:root{--paper:#F5F0E6;--dot:#D6CAB4;--card:#FBF8F1;--beige:#EADFCB;--sand:#D9C6A3;--ink:#2C2119;--ink-2:#6A5645;--brown:#7A4A2A;--ochre:#C1923A;--mark:rgba(214,170,77,.42);--clay:#A9694A;--rust:#B5603C;
+--hand:"Caveat",cursive;--serif:"Cormorant Garamond",Georgia,serif;--sans:"Open Sans","Segoe UI",system-ui,sans-serif;color-scheme:light}
+*{box-sizing:border-box}
+body{background:var(--paper);background-image:radial-gradient(var(--dot) 1.1px,transparent 1.3px);background-size:22px 22px;color:var(--ink);font-family:var(--sans);line-height:1.6;overflow-x:clip}
+.wrap{max-width:58rem;margin:0 auto;padding:2rem 1.25rem 4rem}
+h1,h2,h3,h4,p{margin:0} a{color:var(--brown)}
+.intro{display:grid;gap:.5rem;margin-bottom:2rem} .intro h1{font-size:clamp(1.7rem,5vw,2.4rem)} .intro p{color:var(--ink-2);max-width:40rem}
+.opt{margin-top:3.5rem}
+.tag{display:flex;align-items:center;gap:.7rem;margin-bottom:.4rem}
+.tag b{display:grid;place-items:center;width:2.2rem;height:2.2rem;background:var(--rust);color:#EDE3D0;font-family:var(--serif);font-size:1.25rem;font-weight:600}
+.tag h2{font-size:1.25rem}
+.why{color:var(--ink-2);font-size:.93rem;margin-bottom:1.4rem;max-width:42rem}
+.demo{border-top:2.5px solid var(--ink);padding-top:1.6rem}
+.ed{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--clay)}
+.cv{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--beige);max-width:100%}
+.cv.contain{object-fit:contain;padding:.4rem}
+.btn{display:inline-flex;font-weight:700;font-size:.9rem;text-decoration:none;padding:.6rem 1.1rem;border:2px solid var(--ink)}
+.btn.solid{background:var(--ink);color:var(--paper)}
+/* B1 */
+.show{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr);gap:2rem;align-items:start;padding:1.5rem;background:var(--card);border:1.5px solid var(--sand);border-radius:14px;margin-bottom:1.5rem}
+.show-cover .cv{border-radius:6px;box-shadow:0 18px 30px -18px rgba(44,33,25,.7)}
+.show-body{display:grid;gap:.6rem;align-content:start}
+.show-body h3{font-family:var(--serif);font-size:2rem;font-weight:600;line-height:1.05}
+.show-body p{color:var(--ink-2)}
+.vols{list-style:none;padding:0;margin:.4rem 0 .6rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(6.5rem,1fr));gap:.9rem}
+.vols a{display:grid;gap:.35rem;text-decoration:none;color:var(--ink);font-size:.8rem;font-weight:600;line-height:1.3}
+.vols .cv{border-radius:4px;border:1px solid var(--sand);transition:transform .2s}
+.vols a:hover .cv{transform:translateY(-4px)}
+.show-body .btn{justify-self:start}
+.also{font-size:.95rem;color:var(--ink-2)}
+@media (max-width:640px){.show{grid-template-columns:1fr}.show-cover{max-width:12rem}}
+/* B2 */
+.fichas{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,24rem),1fr));gap:1.2rem}
+.ficha{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:1.1rem;padding:1rem;background:var(--card);border:1.5px solid var(--sand);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .2s,transform .2s}
+.ficha:hover{border-color:var(--ochre);transform:translateY(-2px)}
+.fc .cv{border-radius:4px;box-shadow:0 10px 16px -12px rgba(44,33,25,.7)}
+.fb{display:grid;gap:.35rem;align-content:start}
+.fb h4{font-family:var(--serif);font-size:1.35rem;font-weight:600;line-height:1.1}
+.fb p{font-size:.88rem;color:var(--ink-2)}
+.buy{font-size:.85rem;font-weight:700;color:var(--brown);margin-top:.2rem;border-bottom:2px solid var(--ochre);justify-self:start}
+/* B3 */
+.car{position:relative}
+.track{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(11rem,13rem);gap:1.3rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:.4rem .2rem 1.2rem;scrollbar-width:thin}
+.slide{scroll-snap-align:start;display:grid;gap:.4rem;text-decoration:none;color:var(--ink)}
+.slide .cv{border-radius:6px;box-shadow:0 16px 22px -16px rgba(44,33,25,.75);transition:transform .25s}
+.slide:hover .cv{transform:translateY(-6px) rotate(-1deg)}
+.slide b{font-family:var(--serif);font-size:1.15rem;font-weight:600;line-height:1.15}
+.arrows{display:flex;gap:.5rem;justify-content:flex-end;margin-bottom:.6rem}
+.arrows button{width:2.6rem;height:2.6rem;border-radius:50%;border:2px solid var(--ink);background:var(--card);font-size:1.1rem;cursor:pointer}
+.arrows button:hover{background:var(--mark)}
+/* B4 */
+.tabs{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.4rem}
+.tabs button{font-family:var(--sans);font-weight:700;font-size:.88rem;padding:.5rem 1rem;border:2px solid var(--ink);background:var(--card);color:var(--ink);cursor:pointer;border-radius:999px}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.pane{display:grid;grid-template-columns:repeat(auto-fill,minmax(12rem,1fr));gap:1.6rem}
+.pane[hidden]{display:none}
+.tb{display:grid;gap:.4rem;text-decoration:none;color:var(--ink)}
+.tb .cv{border-radius:6px;box-shadow:0 16px 22px -16px rgba(44,33,25,.75)}
+.tb b{font-family:var(--serif);font-size:1.25rem;font-weight:600;line-height:1.1}
+.tb small{font-size:.86rem;color:var(--ink-2)}
+.foot{margin-top:3.5rem;padding:1.2rem 1.4rem;background:var(--card);border:2px solid var(--ink);outline:3px solid var(--ochre);outline-offset:4px;margin-inline:7px}
+</style>
+<div class="wrap">
+<header class="intro"><h1>Seção de livros: quatro formatos</h1><p>Todas com as capas reais e na paleta do site. Escolha uma letra, ou diga o que misturar.</p></header>
+
+<section class="opt"><div class="tag"><b>A</b><h2>Vitrine por coleção</h2></div><p class="why">Cada coleção ganha um destaque: a capa principal grande, uma frase sobre a série e os volumes em miniatura. Conta a história das coleções, em vez de só listar livros.</p>
+<div class="demo"><article class="show">
+  <div class="show-cover"><img class="cv " src="../../capas/gd1.jpg" alt="Capa: Volume 1" loading="lazy"></div>
+  <div class="show-body"><span class="ed">Classical Press</span><h3>Gramática em Diagramas</h3><p>A coleção de gramática: análise morfossintática por meio da diagramação de frases.</p>
+  <ul class="vols"><li><a href="https://loja.classicalpress.com.br/produtos/gramatica-diagramas-vol-1/" target="_blank" rel="noopener"><img class="cv " src="../../capas/gd1.jpg" alt="Capa: Volume 1" loading="lazy"><span>Volume 1</span></a></li><li><a href="https://loja.classicalpress.com.br/produtos/gramatica-diagramas-vol-2/" target="_blank" rel="noopener"><img class="cv " src="../../capas/gd2.jpg" alt="Capa: Volume 2" loading="lazy"><span>Volume 2</span></a></li><li><a href="https://loja.classicalpress.com.br/produtos/gramatica-diagramas-mapas-tabelas-memorizacao/" target="_blank" rel="noopener"><img class="cv " src="../../capas/gdmap.jpg" alt="Capa: Mapas e Tabelas de Memorização" loading="lazy"><span>Mapas e Tabelas de Memorização</span></a></li></ul>
+  <a class="btn solid" href="https://loja.classicalpress.com.br/search?q=gram%C3%A1tica+em+diagramas" target="_blank" rel="noopener">Ver a coleção ↗</a></div>
+</article><article class="show">
+  <div class="show-cover"><img class="cv " src="../../capas/pemb.jpg" alt="Capa: Português em Mapas pela Bíblia" loading="lazy"></div>
+  <div class="show-body"><span class="ed">Voz que Clama</span><h3>Português em Mapas pela Bíblia</h3><p>A língua estudada pela Palavra, com livro, caderno de exercícios e Provérbios para diagramar.</p>
+  <ul class="vols"><li><a href="https://www.vozqueclama.com.br/livros/portugues-em-mapas-pela-biblia" target="_blank" rel="noopener"><img class="cv " src="../../capas/pemb.jpg" alt="Capa: Português em Mapas pela Bíblia" loading="lazy"><span>Português em Mapas pela Bíblia</span></a></li><li><a href="https://www.vozqueclama.com.br/livros/portugues-em-mapas-pela-bibia-caderno-de-exercicios" target="_blank" rel="noopener"><img class="cv " src="../../capas/pembcad.jpg" alt="Capa: Caderno de Exercícios" loading="lazy"><span>Caderno de Exercícios</span></a></li><li><a href="https://www.vozqueclama.com.br/livros/100-proverbios-para-diagramar" target="_blank" rel="noopener"><img class="cv contain " src="../../capas/prov100.jpg" alt="Capa: 100 Provérbios para Diagramar" loading="lazy"><span>100 Provérbios para Diagramar</span></a></li><li><a href="https://www.vozqueclama.com.br/livros/proverbios-nosso-de-cada-dia" target="_blank" rel="noopener"><img class="cv " src="../../capas/provdia.jpg" alt="Capa: Provérbios Nosso de Cada Dia" loading="lazy"><span>Provérbios Nosso de Cada Dia</span></a></li></ul>
+  <a class="btn solid" href="https://www.vozqueclama.com.br/livros" target="_blank" rel="noopener">Ver a coleção ↗</a></div>
+</article><p class="also">Também: <a href="https://www.vozqueclama.com.br/livros/socializacao-escolar-a-socializacao-que-nao-deu-certo" target="_blank" rel="noopener">Socialização Escolar ↗</a></p></div></section>
+
+<section class="opt"><div class="tag"><b>B</b><h2>Fichas de catálogo</h2></div><p class="why">Cada livro numa ficha horizontal: capa à esquerda, editora, título, uma linha de descrição e o link de compra. Organizado e fácil de ler no celular.</p>
+<div class="demo fichas"><a class="ficha" href="https://loja.classicalpress.com.br/produtos/gramatica-diagramas-vol-1/" target="_blank" rel="noopener"><div class="fc"><img class="cv " src="../../capas/gd1.jpg" alt="Capa: Volume 1" loading="lazy"></div><div class="fb"><span class="ed">Classical Press · Gramática em Diagramas</span><h4>Gramática em Diagramas: Volume 1</h4><p>Guia de gramática para consulta rápida em sala, com a análise das frases feita em diagramas.</p><span class="buy">Comprar na editora →</span></div></a><a class="ficha" href="https://loja.classicalpress.com.br/produtos/gramatica-diagramas-vol-2/" target="_blank" rel="noopener"><div class="fc"><img class="cv " src="../../capas/gd2.jpg" alt="Capa: Volume 2" loading="lazy"></div><div class="fb"><span class="ed">Classical Press · Gramática em Diagramas</span><h4>Gramática em Diagramas: Volume 2</h4><p>A continuação do guia, com construções mais complexas.</p><span class="buy">Comprar na editora →</span></div></a><a class="ficha" href="https://loja.classicalpress.com.br/produtos/gramatica-diagramas-mapas-tabelas-memorizacao/" target="_blank" rel="noopener"><div class="fc"><img class="cv " src="../../capas/gdmap.jpg" alt="Capa: Mapas e Tabelas de Memorização" loading="lazy"></div><div class="fb"><span class="ed">Classical Press · Gramática em Diagramas</span><h4>Gramática em Diagramas: Mapas e Tabelas de Memorização</h4><p>Tabela de referência rápida para revisar o trivium.</p><span class="buy">Comprar na editora →</span></div></a><a class="ficha" href="https://www.vozqueclama.com.br/livros/portugues-em-mapas-pela-biblia" target="_blank" rel="noopener"><div class="fc"><img class="cv " src="../../capas/pemb.jpg" alt="Capa: Português em Mapas pela Bíblia" loading="lazy"></div><div class="fb"><span class="ed">Voz que Clama · Português em Mapas</span><h4>Português em Mapas pela Bíblia</h4><p>O livro que abre a coleção: a língua portuguesa estudada com textos das Escrituras.</p><span class="buy">Comprar na editora →</span></div></a><a class="ficha" href="https://www.vozqueclama.com.br/livros/portugues-em-mapas-pela-bibia-caderno-de-exercicios" target="_blank" rel="noopener"><div class="fc"><img class="cv " src="../../capas/pembcad.jpg" alt="Capa: Caderno de Exercícios" loading="lazy"></div><div class="fb"><span class="ed">Voz que Clama · Português em Mapas</span><h4>Português em Mapas: Caderno de Exercícios</h4><p>Prática para acompanhar o livro. Também vendido em combo.</p><span class="buy">Comprar na editora →</span></div></a><a class="ficha" href="https://www.vozqueclama.com.br/livros/100-proverbios-para-diagramar" target="_blank" rel="noopener"><div class="fc"><img class="cv contain " src="../../capas/prov100.jpg" alt="Capa: 100 Provérbios para Diagramar" loading="lazy"></div><div class="fb"><span class="ed">Voz que Clama · Provérbios</span><h4>100 Provérbios para Diagramar</h4><p>Exercícios de diagramação com a sabedoria de Provérbios, ampliado e com gabarito.</p><span class="buy">Comprar na editora →</span></div></a><a class="ficha" href="https://www.vozqueclama.com.br/livros/proverbios-nosso-de-cada-dia" target="_blank" rel="noopener"><div class="fc"><img class="cv " src="../../capas/provdia.jpg" alt="Capa: Provérbios Nosso de Cada Dia" loading="lazy"></div><div class="fb"><span class="ed">Voz que Clama · Provérbios</span><h4>Provérbios Nosso de Cada Dia</h4><p>Um provérbio por dia. Impresso ou em PDF.</p><span class="buy">Comprar na editora →</span></div></a><a class="ficha" href="https://www.vozqueclama.com.br/livros/socializacao-escolar-a-socializacao-que-nao-deu-certo" target="_blank" rel="noopener"><div class="fc"><img class="cv " src="../../capas/social.jpg" alt="Capa: Socialização Escolar" loading="lazy"></div><div class="fb"><span class="ed">Voz que Clama · Educação</span><h4>Socialização Escolar</h4><p>A socialização que não deu certo: um olhar sobre a escola e a educação em família.</p><span class="buy">Comprar na editora →</span></div></a></div></section>
+
+<section class="opt"><div class="tag"><b>C</b><h2>Carrossel</h2></div><p class="why">Uma fileira de capas que desliza para o lado, com setas e arraste no celular. Ocupa pouco espaço e deixa as capas em evidência.</p>
+<div class="demo car"><div class="arrows"><button type="button" data-d="-1" aria-label="Anterior">←</button><button type="button" data-d="1" aria-label="Próximo">→</button></div><div class="track" id="track"><a class="slide" href="https://loja.classicalpress.com.br/produtos/gramatica-diagramas-vol-1/" target="_blank" rel="noopener"><img class="cv " src="../../capas/gd1.jpg" alt="Capa: Volume 1" loading="lazy"><span class="ed">Classical Press</span><b>Gramática em Diagramas: Volume 1</b></a><a class="slide" href="https://loja.classicalpress.com.br/produtos/gramatica-diagramas-vol-2/" target="_blank" rel="noopener"><img class="cv " src="../../capas/gd2.jpg" alt="Capa: Volume 2" loading="lazy"><span class="ed">Classical Press</span><b>Gramática em Diagramas: Volume 2</b></a><a class="slide" href="https://loja.classicalpress.com.br/produtos/gramatica-diagramas-mapas-tabelas-memorizacao/" target="_blank" rel="noopener"><img class="cv " src="../../capas/gdmap.jpg" alt="Capa: Mapas e Tabelas de Memorização" loading="lazy"><span class="ed">Classical Press</span><b>Gramática em Diagramas: Mapas e Tabelas de Memorização</b></a><a class="slide" href="https://www.vozqueclama.com.br/livros/portugues-em-mapas-pela-biblia" target="_blank" rel="noopener"><img class="cv " src="../../capas/pemb.jpg" alt="Capa: Português em Mapas pela Bíblia" loading="lazy"><span class="ed">Voz que Clama</span><b>Português em Mapas pela Bíblia</b></a><a class="slide" href="https://www.vozqueclama.com.br/livros/portugues-em-mapas-pela-bibia-caderno-de-exercicios" target="_blank" rel="noopener"><img class="cv " src="../../capas/pembcad.jpg" alt="Capa: Caderno de Exercícios" loading="lazy"><span class="ed">Voz que Clama</span><b>Português em Mapas: Caderno de Exercícios</b></a><a class="slide" href="https://www.vozqueclama.com.br/livros/100-proverbios-para-diagramar" target="_blank" rel="noopener"><img class="cv contain " src="../../capas/prov100.jpg" alt="Capa: 100 Provérbios para Diagramar" loading="lazy"><span class="ed">Voz que Clama</span><b>100 Provérbios para Diagramar</b></a><a class="slide" href="https://www.vozqueclama.com.br/livros/proverbios-nosso-de-cada-dia" target="_blank" rel="noopener"><img class="cv " src="../../capas/provdia.jpg" alt="Capa: Provérbios Nosso de Cada Dia" loading="lazy"><span class="ed">Voz que Clama</span><b>Provérbios Nosso de Cada Dia</b></a><a class="slide" href="https://www.vozqueclama.com.br/livros/socializacao-escolar-a-socializacao-que-nao-deu-certo" target="_blank" rel="noopener"><img class="cv " src="../../capas/social.jpg" alt="Capa: Socialização Escolar" loading="lazy"><span class="ed">Voz que Clama</span><b>Socialização Escolar</b></a></div></div></section>
+
+<section class="opt"><div class="tag"><b>D</b><h2>Coleções em abas</h2></div><p class="why">Abas para cada coleção. A pessoa escolhe o assunto e vê só aqueles livros, em tamanho grande. Fica limpo mesmo quando o catálogo crescer, e prepara o terreno para a loja.</p>
+<div class="demo"><div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-t="0">Gramática em Diagramas</button><button role="tab" aria-selected="false" data-t="1">Português em Mapas</button><button role="tab" aria-selected="false" data-t="2">Provérbios</button><button role="tab" aria-selected="false" data-t="3">Educação</button></div><div class="pane" data-p="0"><a class="tb" href="https://loja.classicalpress.com.br/produtos/gramatica-diagramas-vol-1/" target="_blank" rel="noopener"><img class="cv " src="../../capas/gd1.jpg" alt="Capa: Volume 1" loading="lazy"><span class="ed">Classical Press</span><b>Volume 1</b><small>Guia de gramática para consulta rápida em sala, com a análise das frases feita em diagramas.</small></a><a class="tb" href="https://loja.classicalpress.com.br/produtos/gramatica-diagramas-vol-2/" target="_blank" rel="noopener"><img class="cv " src="../../capas/gd2.jpg" alt="Capa: Volume 2" loading="lazy"><span class="ed">Classical Press</span><b>Volume 2</b><small>A continuação do guia, com construções mais complexas.</small></a><a class="tb" href="https://loja.classicalpress.com.br/produtos/gramatica-diagramas-mapas-tabelas-memorizacao/" target="_blank" rel="noopener"><img class="cv " src="../../capas/gdmap.jpg" alt="Capa: Mapas e Tabelas de Memorização" loading="lazy"><span class="ed">Classical Press</span><b>Mapas e Tabelas de Memorização</b><small>Tabela de referência rápida para revisar o trivium.</small></a></div><div class="pane" data-p="1" hidden><a class="tb" href="https://www.vozqueclama.com.br/livros/portugues-em-mapas-pela-biblia" target="_blank" rel="noopener"><img class="cv " src="../../capas/pemb.jpg" alt="Capa: Português em Mapas pela Bíblia" loading="lazy"><span class="ed">Voz que Clama</span><b>Português em Mapas pela Bíblia</b><small>O livro que abre a coleção: a língua portuguesa estudada com textos das Escrituras.</small></a><a class="tb" href="https://www.vozqueclama.com.br/livros/portugues-em-mapas-pela-bibia-caderno-de-exercicios" target="_blank" rel="noopener"><img class="cv " src="../../capas/pembcad.jpg" alt="Capa: Caderno de Exercícios" loading="lazy"><span class="ed">Voz que Clama</span><b>Caderno de Exercícios</b><small>Prática para acompanhar o livro. Também vendido em combo.</small></a></div><div class="pane" data-p="2" hidden><a class="tb" href="https://www.vozqueclama.com.br/livros/100-proverbios-para-diagramar" target="_blank" rel="noopener"><img class="cv contain " src="../../capas/prov100.jpg" alt="Capa: 100 Provérbios para Diagramar" loading="lazy"><span class="ed">Voz que Clama</span><b>100 Provérbios para Diagramar</b><small>Exercícios de diagramação com a sabedoria de Provérbios, ampliado e com gabarito.</small></a><a class="tb" href="https://www.vozqueclama.com.br/livros/proverbios-nosso-de-cada-dia" target="_blank" rel="noopener"><img class="cv " src="../../capas/provdia.jpg" alt="Capa: Provérbios Nosso de Cada Dia" loading="lazy"><span class="ed">Voz que Clama</span><b>Provérbios Nosso de Cada Dia</b><small>Um provérbio por dia. Impresso ou em PDF.</small></a></div><div class="pane" data-p="3" hidden><a class="tb" href="https://www.vozqueclama.com.br/livros/socializacao-escolar-a-socializacao-que-nao-deu-certo" target="_blank" rel="noopener"><img class="cv " src="../../capas/social.jpg" alt="Capa: Socialização Escolar" loading="lazy"><span class="ed">Voz que Clama</span><b>Socialização Escolar</b><small>A socialização que não deu certo: um olhar sobre a escola e a educação em família.</small></a></div></div></section>
+
+<div class="foot"><p><b>Como escolher:</b> responda com a letra, por exemplo “A”, ou com uma mistura, como “D com as fichas da B”.</p></div>
+</div>
+<script>
+document.querySelectorAll('.arrows button').forEach(function(b){b.addEventListener('click',function(){var t=document.getElementById('track');t.scrollBy({left:(+b.dataset.d)*t.clientWidth*0.8,behavior:'smooth'})})});
+document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false')});document.querySelectorAll('.pane').forEach(function(p){p.hidden=p.dataset.p!==b.dataset.t})})});
+</script>
+
+</body>
+</html>
