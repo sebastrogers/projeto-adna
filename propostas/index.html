@@ -9,7 +9,7 @@
 <title>Adna Barbosa · Propostas</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Mrs+Saint+Delafield&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500;600&family=Caveat:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Mrs+Saint+Delafield&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap">
 <style>
 /* Layout: prancheta de comparação. Cada proposta é um quadro numerado (A–E para o nome, 1–4 para a estética), com uma linha de explicação embaixo. */
 :root{
@@ -133,19 +133,134 @@ p{margin:0}
 .m4 .label h4{font-family:var(--hand);font-size:2.3rem;color:var(--brown);margin:0;line-height:1}
 .m4 .label span{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-2)}
 .m4 .compass{position:absolute;right:.8rem;top:3.2rem;width:42px;height:42px;opacity:.55}
+
+/* ---------- capitulares ---------- */
+:root{--rust:#B5603C;--rust-d:#8E4529;--parch:#EDE3D0}
+.cap{display:inline-block;flex:none;vertical-align:top}
+.cap svg{display:block;width:100%;height:auto}
+.cap .lt{font-family:var(--serif);font-weight:600}
+.texty{background-color:var(--parch);background-image:repeating-linear-gradient(transparent 0 9px,rgba(59,42,31,.13) 9px 11px,transparent 11px 14px);}
+.texty.cols{background-image:repeating-linear-gradient(transparent 0 9px,rgba(59,42,31,.12) 9px 11px,transparent 11px 14px),repeating-linear-gradient(90deg,transparent 0 31%,var(--parch) 31% 34%)}
+.stage.texty{background-size:auto}
+/* nomes */
+.n1{display:grid;grid-template-columns:auto 1fr;column-gap:.6rem;align-items:start;max-width:26rem;width:100%}
+.n1 .cap{width:clamp(5.6rem,17vw,7.4rem);grid-row:1/3}
+.n1 .rest{font-family:var(--serif);font-weight:500;font-size:clamp(3rem,9vw,4.2rem);line-height:.9;color:var(--ink);margin-top:-.05em}
+.n1 .last{font-family:"Cormorant SC",var(--serif);font-weight:600;font-size:clamp(1.3rem,4vw,1.85rem);letter-spacing:.32em;color:var(--rust-d);align-self:end;padding-bottom:.15em}
+.n2{display:flex;align-items:flex-end;flex-wrap:wrap;gap:.2rem .9rem;justify-content:center}
+.n2 .w{display:flex;align-items:flex-end}
+.n2 .cap{width:clamp(3.8rem,11vw,4.8rem);margin-right:.08em}
+.n2 .t{font-family:var(--serif);font-weight:500;font-size:clamp(2.6rem,7.5vw,3.6rem);line-height:.82;color:var(--ink)}
+.n3{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;justify-content:center}
+.n3 .swash{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(6rem,18vw,8.5rem);line-height:.8;color:var(--rust);position:relative;padding-right:.05em}
+.n3 .swash{isolation:isolate}
+.n3 .swash svg{position:absolute;left:-.1em;top:-.08em;width:.95em;height:auto;color:var(--rust);opacity:.4;z-index:-1}
+.n3 .t{display:grid;line-height:.95}
+.n3 .t b{font-family:var(--serif);font-weight:500;font-size:clamp(2.6rem,7.5vw,3.5rem);color:var(--ink)}
+.n3 .t span{font-family:"Cormorant SC",var(--serif);font-weight:600;font-size:clamp(1.1rem,3.4vw,1.5rem);letter-spacing:.3em;color:var(--rust-d)}
+/* logos */
+.logos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:1.5rem}
+.lg{display:grid;gap:.7rem}
+.lg .stage{min-height:11rem;gap:1.2rem}
+.lg .row{display:flex;align-items:center;gap:.7rem}
+.lg .row .cap{width:3rem}
+.lg .row .nm{display:grid;line-height:1.05}
+.lg .row .nm b{font-family:var(--serif);font-weight:600;font-size:1.35rem;color:var(--ink)}
+.lg .row .nm span{font-family:var(--hand);font-size:1.1rem;color:var(--clay)}
+.lg .big{width:6.5rem}
+/* aplicado */
+.applied{border:2px solid var(--ink);overflow:hidden}
+.applied .bar{display:flex;align-items:center;justify-content:space-between;gap:.8rem;padding:.55rem .9rem;background:var(--paper);border-bottom:2px solid var(--ink);box-shadow:0 3px 0 var(--ochre);position:relative;z-index:1}
+.applied .bar .row{display:flex;align-items:center;gap:.6rem}
+.applied .bar .cap{width:2.5rem}
+.applied .bar b{font-family:var(--serif);font-weight:600;font-size:1.2rem}
+.applied .bar .links{font-size:.72rem}
+.applied .hero{padding:2.2rem 1.3rem 2.4rem;display:grid;gap:1.4rem;justify-items:start}
+.applied .card{background:var(--card);border:1.5px solid var(--ink);outline:1px solid var(--ochre);outline-offset:5px;padding:1.2rem 1.4rem;margin:6px}
+.applied .lede{font-size:1.05rem;max-width:30rem;background:var(--paper);padding:.3rem .5rem}
+
 .foot{margin-top:3rem;padding:1.4rem;border:2px solid var(--ink);outline:3px solid var(--ochre);outline-offset:4px;background:var(--card);margin-inline:7px}
 .foot p{font-size:.95rem}
 .foot p + p{margin-top:.5rem;color:var(--ink-2)}
 </style>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="vine" viewBox="0 0 100 100">
+      <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <path d="M12 34 C 10 18, 22 10, 32 15 C 41 20, 35 31, 27 28 C 22 26, 24 20, 29 21"/>
+        <path d="M88 66 C 90 82, 78 90, 68 85 C 59 80, 65 69, 73 72 C 78 74, 76 80, 71 79"/>
+        <path d="M12 34 C 14 50, 8 62, 14 76 C 18 85, 28 88, 34 86"/>
+        <path d="M88 66 C 86 50, 92 38, 86 24 C 82 15, 72 12, 66 14"/>
+        <path d="M14 58 C 20 56, 24 60, 22 66"/><path d="M86 42 C 80 44, 76 40, 78 34"/>
+      </g>
+      <g fill="currentColor">
+        <path d="M34 86 c 4 -5 10 -5 13 -1 c -4 4 -9 5 -13 1z"/><path d="M66 14 c -4 5 -10 5 -13 1 c 4 -4 9 -5 13 -1z"/>
+        <path d="M14 76 c -5 -3 -6 -9 -2 -12 c 4 3 5 8 2 12z"/><path d="M86 24 c 5 3 6 9 2 12 c -4 -3 -5 -8 -2 -12z"/>
+        <circle cx="22" cy="44" r="1.6"/><circle cx="78" cy="56" r="1.6"/><circle cx="40" cy="8" r="1.4"/><circle cx="60" cy="92" r="1.4"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
 <div class="wrap">
   <header class="intro">
     <h1>Propostas para o site da Adna</h1>
-    <p>Cinco jeitos de escrever o nome dela na abertura (A a E) e quatro estéticas para o site inteiro (1 a 4). O cabeçalho com o monograma AB fica igual em todas. Me diga uma letra e um número, ou o que misturar.</p>
+    <p>Novas propostas com capitulares: três para o nome (F, G e H), três para a logo (L1, L2 e L3) e um exemplo aplicado. As propostas anteriores continuam mais abaixo.</p>
   </header>
 
+  
+  <section class="part" aria-labelledby="p-cap">
+    <h2 id="p-cap">Capitulares <span>a letra inicial ornamentada</span></h2>
+    <div class="grid">
+      <article class="opt">
+        <div class="tag"><b>F</b><h3>Capitular de livro antigo</h3></div>
+        <div class="stage texty"><div class="n1"><span class="cap" aria-hidden="true"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="var(--rust)"/><rect x="4.5" y="4.5" width="91" height="91" fill="none" stroke="var(--parch)" stroke-width="1.2"/><use href="#vine" style="color:var(--parch)" opacity=".85"/><text class="lt" x="50" y="74" text-anchor="middle" font-size="72" fill="var(--parch)" stroke="var(--rust)" stroke-width="6" paint-order="stroke">A</text></svg></span><span class="rest">dna</span><span class="last">Barbosa</span></div></div>
+        <p>O “A” em quadro terracota, com ramos e folhas, ocupando duas linhas, como no começo de um capítulo. “Barbosa” em versalete fino.</p>
+      </article>
+      <article class="opt">
+        <div class="tag"><b>G</b><h3>Duas capitulares</h3></div>
+        <div class="stage texty"><div class="n2"><span class="w"><span class="cap" aria-hidden="true"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="var(--rust)"/><rect x="4.5" y="4.5" width="91" height="91" fill="none" stroke="var(--parch)" stroke-width="1.2"/><use href="#vine" style="color:var(--parch)" opacity=".85"/><text class="lt" x="50" y="74" text-anchor="middle" font-size="72" fill="var(--parch)" stroke="var(--rust)" stroke-width="6" paint-order="stroke">A</text></svg></span><span class="t">dna</span></span><span class="w"><span class="cap" aria-hidden="true"><svg viewBox="0 0 100 100"><rect x="1.5" y="1.5" width="97" height="97" fill="var(--card)" stroke="var(--rust)" stroke-width="2"/><rect x="6" y="6" width="88" height="88" fill="none" stroke="var(--rust)" stroke-width=".8"/><use href="#vine" style="color:var(--rust)" opacity=".7"/><text class="lt" x="50" y="74" text-anchor="middle" font-size="72" fill="var(--rust-d)" stroke="var(--card)" stroke-width="6" paint-order="stroke">B</text></svg></span><span class="t">arbosa</span></span></div></div>
+        <p>“A” preenchido e “B” só em contorno, cada um abrindo o seu nome. Mais simétrico e com mais ornamento.</p>
+      </article>
+      <article class="opt">
+        <div class="tag"><b>H</b><h3>Capitular caligráfica</h3></div>
+        <div class="stage texty"><div class="n3"><span class="swash"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#vine"/></svg>A</span><span class="t"><b>dna</b><span>Barbosa</span></span></div></div>
+        <p>Um “A” itálico grande, em terracota, com ramos ao fundo. Mais leve que o quadro, ainda com cara de manuscrito.</p>
+      </article>
+    </div>
+
+    <h2 style="margin-top:3rem" id="p-logo">Logo <span>novas versões do monograma</span></h2>
+    <div class="logos">
+      <article class="lg">
+        <div class="tag"><b>L1</b><h3>Capitular A</h3></div>
+        <div class="stage texty"><span class="cap big" aria-hidden="true"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="var(--rust)"/><rect x="4.5" y="4.5" width="91" height="91" fill="none" stroke="var(--parch)" stroke-width="1.2"/><use href="#vine" style="color:var(--parch)" opacity=".85"/><text class="lt" x="50" y="74" text-anchor="middle" font-size="72" fill="var(--parch)" stroke="var(--rust)" stroke-width="6" paint-order="stroke">A</text></svg></span><div class="row"><span class="cap" aria-hidden="true"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="var(--rust)"/><rect x="4.5" y="4.5" width="91" height="91" fill="none" stroke="var(--parch)" stroke-width="1.2"/><use href="#vine" style="color:var(--parch)" opacity=".85"/><text class="lt" x="50" y="74" text-anchor="middle" font-size="72" fill="var(--parch)" stroke="var(--rust)" stroke-width="6" paint-order="stroke">A</text></svg></span><span class="nm"><b>Adna Barbosa</b><span>escritora e educadora</span></span></div></div>
+        <p>O “A” ornamentado sozinho, em quadro terracota. Funciona bem pequeno, como ícone e favicon.</p>
+      </article>
+      <article class="lg">
+        <div class="tag"><b>L2</b><h3>A e b entrelaçados</h3></div>
+        <div class="stage texty"><span class="cap big" aria-hidden="true"><svg viewBox="0 0 100 100"><rect x="1.5" y="1.5" width="97" height="97" fill="var(--parch)" stroke="var(--rust)" stroke-width="2"/><rect x="6" y="6" width="88" height="88" fill="none" stroke="var(--rust)" stroke-width=".8"/><use href="#vine" style="color:var(--rust)" opacity=".45"/><text class="lt" x="40" y="70" text-anchor="middle" font-size="68" fill="var(--rust)">A</text><text x="64" y="80" text-anchor="middle" font-size="46" font-style="italic" font-family="Cormorant Garamond, Georgia, serif" font-weight="500" fill="var(--ink)" stroke="var(--parch)" stroke-width="4" paint-order="stroke">b</text></svg></span><div class="row"><span class="cap" aria-hidden="true"><svg viewBox="0 0 100 100"><rect x="1.5" y="1.5" width="97" height="97" fill="var(--parch)" stroke="var(--rust)" stroke-width="2"/><rect x="6" y="6" width="88" height="88" fill="none" stroke="var(--rust)" stroke-width=".8"/><use href="#vine" style="color:var(--rust)" opacity=".45"/><text class="lt" x="40" y="70" text-anchor="middle" font-size="68" fill="var(--rust)">A</text><text x="64" y="80" text-anchor="middle" font-size="46" font-style="italic" font-family="Cormorant Garamond, Georgia, serif" font-weight="500" fill="var(--ink)" stroke="var(--parch)" stroke-width="4" paint-order="stroke">b</text></svg></span><span class="nm"><b>Adna Barbosa</b><span>escritora e educadora</span></span></div></div>
+        <p>“A” terracota com um “b” itálico sobreposto, em moldura dupla fina. Leva as duas iniciais, como o AB atual.</p>
+      </article>
+      <article class="lg">
+        <div class="tag"><b>L3</b><h3>Capitular em contorno</h3></div>
+        <div class="stage texty"><span class="cap big" aria-hidden="true"><svg viewBox="0 0 100 100"><rect x="1.5" y="1.5" width="97" height="97" fill="var(--card)" stroke="var(--rust)" stroke-width="2"/><rect x="6" y="6" width="88" height="88" fill="none" stroke="var(--rust)" stroke-width=".8"/><use href="#vine" style="color:var(--rust)" opacity=".7"/><text class="lt" x="50" y="74" text-anchor="middle" font-size="72" fill="var(--rust-d)" stroke="var(--card)" stroke-width="6" paint-order="stroke">A</text></svg></span><div class="row"><span class="cap" aria-hidden="true"><svg viewBox="0 0 100 100"><rect x="1.5" y="1.5" width="97" height="97" fill="var(--card)" stroke="var(--rust)" stroke-width="2"/><rect x="6" y="6" width="88" height="88" fill="none" stroke="var(--rust)" stroke-width=".8"/><use href="#vine" style="color:var(--rust)" opacity=".7"/><text class="lt" x="50" y="74" text-anchor="middle" font-size="72" fill="var(--rust-d)" stroke="var(--card)" stroke-width="6" paint-order="stroke">A</text></svg></span><span class="nm"><b>Adna Barbosa</b><span>escritora e educadora</span></span></div></div>
+        <p>A mesma capitular só em traço, sobre papel. É a mais leve das três.</p>
+      </article>
+    </div>
+
+    <h2 style="margin-top:3rem">Aplicado <span>F com L1, sobre fundo de texto</span></h2>
+    <div class="applied">
+      <div class="bar"><span class="row"><span class="cap" aria-hidden="true"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="var(--rust)"/><rect x="4.5" y="4.5" width="91" height="91" fill="none" stroke="var(--parch)" stroke-width="1.2"/><use href="#vine" style="color:var(--parch)" opacity=".85"/><text class="lt" x="50" y="74" text-anchor="middle" font-size="72" fill="var(--parch)" stroke="var(--rust)" stroke-width="6" paint-order="stroke">A</text></svg></span><b>Adna Barbosa</b></span><span class="links"><span>Livros</span><span>Cursos</span><span>Assista</span><span>Loja</span></span></div>
+      <div class="hero texty cols">
+        <div class="card"><div class="n1"><span class="cap" aria-hidden="true"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="var(--rust)"/><rect x="4.5" y="4.5" width="91" height="91" fill="none" stroke="var(--parch)" stroke-width="1.2"/><use href="#vine" style="color:var(--parch)" opacity=".85"/><text class="lt" x="50" y="74" text-anchor="middle" font-size="72" fill="var(--parch)" stroke="var(--rust)" stroke-width="6" paint-order="stroke">A</text></svg></span><span class="rest">dna</span><span class="last">Barbosa</span></div></div>
+        <p class="lede">Ensino <b style="font-family:var(--hand);font-size:1.45em;color:var(--brown)">gramática</b> para que pais, adolescentes e jovens aprendam a <span style="background:var(--mark)">discernir o que é excelente</span>.</p>
+      </div>
+    </div>
+    <p style="margin-top:.8rem;font-size:.92rem;color:var(--ink-2)">O fundo imita colunas de texto impresso, como a página de um livro antigo. Pode ficar só na abertura ou no site inteiro.</p>
+  </section>
+
   <section class="part" aria-labelledby="p-nome">
-    <h2 id="p-nome">O nome <span>na abertura do site</span></h2>
+    <h2 id="p-nome">Propostas anteriores <span>nome A a E</span></h2>
     <div class="grid">
 
       <article class="opt">
@@ -290,7 +405,7 @@ p{margin:0}
   </section>
 
   <div class="foot">
-    <p><b>Como escolher:</b> responda com uma letra e um número, por exemplo “A com 1” ou “B com 2”.</p>
+    <p><b>Como escolher:</b> responda com o nome, a logo e a estética, por exemplo “F, L1 e 1”.</p>
     <p>Dá para misturar: o nome de uma proposta com a estética de outra.</p>
   </div>
 </div>
