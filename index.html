@@ -241,6 +241,7 @@ section{padding-block:3.5rem}
 .etx{display:grid;gap:.35rem;min-width:0;flex:1}
 .listen{justify-self:start;margin-top:.35rem;font-family:var(--sans);font-weight:700;font-size:.88rem;color:var(--brown);background:none;border:0;border-bottom:2px solid var(--ochre);padding:.1rem 0;cursor:pointer;text-decoration:none}
 .listen:hover{color:var(--ink)}
+.egrid iframe.ep{width:100%;height:152px;border:0;border-radius:12px;display:block;box-shadow:0 10px 22px -16px rgba(44,33,25,.6)}
 .etx iframe{width:100%;height:152px;border:0;border-radius:12px;margin-top:.5rem;display:block}
 .allch{scroll-margin-top:3.5rem}
 body{background-color:var(--paper);background-image:radial-gradient(var(--dot) 1.1px,transparent 1.3px);background-size:22px 22px;color:var(--ink);font-family:var(--sans);font-size:1.02rem;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:clip}
@@ -795,6 +796,7 @@ document.querySelectorAll('.thumb').forEach(function(t){
   if(noFrames){var a=document.createElement('a');a.className='play';a.href='https://www.youtube.com/watch?v='+id;a.target='_blank';a.rel='noopener';a.textContent='▶ Assistir no YouTube ↗';b.replaceWith(a);return;}
   b.addEventListener('click',function(){t.insertAdjacentHTML('beforeend','<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0" title="Vídeo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');b.remove();});
 });
+if(!noFrames){document.querySelectorAll('.ecard').forEach(function(c){var id=c.querySelector('.listen').getAttribute('data-ep');var f=document.createElement('iframe');f.className='ep';f.src='https://open.spotify.com/embed/episode/'+id+'?utm_source=generator';f.title='Episódio do podcast: '+c.querySelector('h4').textContent;f.allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';f.loading='lazy';c.replaceWith(f);});}
 document.querySelectorAll('.listen').forEach(function(b){
   var id=b.getAttribute('data-ep');
   if(noFrames){var a=document.createElement('a');a.className='listen';a.href='https://open.spotify.com/episode/'+id;a.target='_blank';a.rel='noopener';a.textContent='Ouvir no Spotify ↗';b.replaceWith(a);return;}
