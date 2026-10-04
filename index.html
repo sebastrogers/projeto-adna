@@ -214,12 +214,14 @@ section{padding-block:3.5rem}
 
 
 /* assista e ouça */
-.media{display:grid;gap:2.25rem}
+.media{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);gap:1.75rem;align-items:start}
+@media (max-width:820px){.media{grid-template-columns:1fr}}
 .mcard{min-width:0}
-.player{position:relative;border:2px solid var(--ink);background:var(--ink);box-shadow:5px 5px 0 var(--ochre);overflow:hidden}
-.player.video{aspect-ratio:16/9;max-width:100%}
-.player.audio{height:232px;background:var(--card)}
+.player{position:relative;border-radius:12px;overflow:hidden;background:var(--ink);box-shadow:0 0 0 2px var(--ink),5px 5px 0 2px var(--ochre)}
+.player.video{height:352px;max-width:100%}
+.player.audio{height:352px;background:#282828}
 .player iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+@media (max-width:820px){.player.video{height:auto;aspect-ratio:16/9}}
 .mfall{display:none}
 .noframes .media{grid-template-columns:repeat(auto-fit,minmax(min(100%,19rem),1fr));gap:1.75rem}
 .noframes .mcard .player{display:none}
@@ -237,7 +239,7 @@ section{padding-block:3.5rem}
 .mfall .btn{align-self:flex-start;margin-top:auto}
 .yt .mfall .btn.solid{background:var(--ochre);border-color:var(--ochre);color:var(--ink)}
 .mlabel{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem 1rem;flex-wrap:wrap;margin-bottom:.8rem}
-.mlabel h3{font-size:1rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.mlabel h3{font-size:.85rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
 .mlabel a{font-size:.85rem;font-weight:700}
 .allch{margin-top:2.75rem}
 .allch > h3{font-family:var(--hand);font-size:1.7rem;font-weight:700;color:var(--clay);margin-bottom:.8rem}
@@ -445,8 +447,8 @@ footer .hand{font-size:1.4rem}
     <div class="head"><h2 id="t-assista">Assista</h2><span class="pred">e ouça, aqui mesmo</span></div>
     <div class="media">
       <article class="mcard yt">
-        <div class="mlabel"><h3>YouTube · A Arte de Discernir</h3><a href="https://www.youtube.com/@aartedediscernir" target="_blank" rel="noopener">Abrir o canal ↗</a></div>
-        <div class="player video"><iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=UUbDFojLQ1G-HnLH_pvxNnGA" title="Vídeos do canal A Arte de Discernir" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="mlabel"><h3>YouTube</h3><a href="https://www.youtube.com/@aartedediscernir" target="_blank" rel="noopener">Abrir o canal ↗</a></div>
+        <div class="player video"><iframe src="https://www.youtube-nocookie.com/embed/w92aFL1w_x4?list=UUbDFojLQ1G-HnLH_pvxNnGA&amp;rel=0" title="Vídeos do canal A Arte de Discernir" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
         <div class="mfall">
           <span class="mic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 7.5v9l7.5-4.5z" fill="currentColor"/></svg></span>
           <div class="mtx"><span class="k">Canal no YouTube</span><b>A Arte de Discernir</b><p>Falácias lógicas, gramática, educação clássica e treinos feitos em casa, com os filhos.</p></div>
@@ -454,7 +456,7 @@ footer .hand{font-size:1.4rem}
         </div>
       </article>
       <article class="mcard pod">
-        <div class="mlabel"><h3>Podcast · Feminina Mulher</h3><a href="https://open.spotify.com/show/27B49ikh5DtUnhJEBFffkV" target="_blank" rel="noopener">Abrir no Spotify ↗</a></div>
+        <div class="mlabel"><h3>Podcast</h3><a href="https://open.spotify.com/show/27B49ikh5DtUnhJEBFffkV" target="_blank" rel="noopener">Abrir no Spotify ↗</a></div>
         <div class="player audio"><iframe src="https://open.spotify.com/embed/show/27B49ikh5DtUnhJEBFffkV?utm_source=generator&amp;theme=0" title="Podcast Feminina Mulher no Spotify" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe></div>
         <div class="mfall">
           <span class="mic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
