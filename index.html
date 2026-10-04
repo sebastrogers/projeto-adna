@@ -201,8 +201,12 @@ section{padding-block:3.5rem}
 
 /* estante */
 .shelf-hint{font-family:var(--hand);font-size:1.45rem;color:var(--clay);margin-bottom:.6rem}
-.estante{position:relative;overflow-x:auto;overflow-y:hidden;padding-top:1.4rem;scrollbar-width:thin}
-.row{display:flex;align-items:flex-end;gap:3px;padding-inline:1.2rem;min-width:max-content;height:18.5rem}
+.estante{position:relative;display:flex;align-items:flex-end;padding-top:1.4rem}
+.unit{display:flex;flex-direction:column;min-width:0}
+.u2{flex:1}
+@media (min-width:641px){.u1 .plank{border-radius:2px 0 0 2px;box-shadow:0 8px 10px -6px rgba(44,33,25,.6)}.u2 .plank{border-radius:0 2px 2px 0;margin-left:-1px}}
+.row{display:flex;align-items:flex-end;gap:3px;height:18.5rem}
+.u1 .row{padding-left:1.2rem;padding-right:3px}
 .spine{position:relative;width:var(--w);height:var(--h);background:var(--bg);color:var(--fg);border:0;border-radius:3px 3px 0 0;padding:.9rem 0 .7rem;display:flex;flex-direction:column;align-items:center;gap:.6rem;cursor:pointer;box-shadow:inset 3px 0 0 rgba(255,255,255,.14),inset -4px 0 0 rgba(0,0,0,.18),0 -1px 0 rgba(0,0,0,.08);transition:transform .25s cubic-bezier(.3,1.4,.5,1),box-shadow .2s;font-family:var(--sans)}
 .spine:nth-child(3n+2){transform:rotate(-1.2deg);transform-origin:bottom right}
 .spine:hover{transform:translateY(-10px)}
@@ -241,8 +245,12 @@ section{padding-block:3.5rem}
 @keyframes pickin{from{opacity:.2;transform:translateY(6px)}to{opacity:1;transform:none}}
 .shops{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;margin-top:1.1rem;font-size:.9rem;font-weight:700}
 @media (max-width:640px){
-  .row{height:15rem;gap:2px}
-  .spine{width:calc(var(--w)*.82);height:calc(var(--h)*.82)}
+  .estante{flex-direction:column;align-items:stretch;gap:1.8rem}
+  .row{height:16rem;gap:3px;justify-content:center}
+  .u1 .row{padding-inline:0}
+  .bookend{display:none}
+  .inkset{width:4.6rem;margin-left:1rem}
+  .spine{width:calc(var(--w)*.95);height:calc(var(--h)*.9)}
   .spine .sv b{font-size:.95rem}.spine .sv i{font-size:.88rem}
   .typewriter{width:8.5rem;margin-left:1.4rem}
   .inkset{width:4.8rem}
@@ -437,7 +445,8 @@ footer .hand{font-size:1.4rem}
     <div class="head"><h2 id="t-livros">Livros</h2><span class="pred">para estudar a língua pela Palavra</span></div>
     <p class="shelf-hint">Escolha uma lombada para ver o livro.</p>
     <div class="estante">
-      <div class="row" role="group" aria-label="Estante de livros"><button class="spine" type="button" style="--bg:#B5603C;--fg:#EDE3D0;--w:3.6rem;--h:15.5rem" aria-pressed="true" data-i="0" aria-label="Gramática em Diagramas vol. 1"><span class="band"></span><span class="sv"><b>Gramática em Diagramas</b><i>vol. 1</i></span><span class="band"></span><span class="sa">AB</span></button><button class="spine" type="button" style="--bg:#8E4529;--fg:#EDE3D0;--w:3.6rem;--h:15.5rem" aria-pressed="false" data-i="1" aria-label="Gramática em Diagramas vol. 2"><span class="band"></span><span class="sv"><b>Gramática em Diagramas</b><i>vol. 2</i></span><span class="band"></span><span class="sa">AB</span></button><button class="spine" type="button" style="--bg:#C1923A;--fg:#2C2119;--w:3.1rem;--h:14rem" aria-pressed="false" data-i="2" aria-label="Mapas e Tabelas Gramática em Diagramas"><span class="band"></span><span class="sv"><b>Mapas e Tabelas</b><i>Gramática em Diagramas</i></span><span class="band"></span><span class="sa">AB</span></button><button class="spine" type="button" style="--bg:#79744A;--fg:#F5F0E6;--w:4.2rem;--h:16.5rem" aria-pressed="false" data-i="3" aria-label="Português em Mapas pela Bíblia"><span class="band"></span><span class="sv"><b>Português em Mapas</b><i>pela Bíblia</i></span><span class="band"></span><span class="sa">AB</span></button><button class="spine" type="button" style="--bg:#A3A07A;--fg:#2C2119;--w:3rem;--h:16.5rem" aria-pressed="false" data-i="4" aria-label="Caderno de Exercícios Português em Mapas"><span class="band"></span><span class="sv"><b>Caderno de Exercícios</b><i>Português em Mapas</i></span><span class="band"></span><span class="sa">AB</span></button><button class="spine" type="button" style="--bg:#7A4A2A;--fg:#EDE3D0;--w:3.4rem;--h:15rem" aria-pressed="false" data-i="5" aria-label="100 Provérbios para Diagramar"><span class="band"></span><span class="sv"><b>100 Provérbios</b><i>para Diagramar</i></span><span class="band"></span><span class="sa">AB</span></button><button class="spine" type="button" style="--bg:#D9C6A3;--fg:#2C2119;--w:3rem;--h:13.5rem" aria-pressed="false" data-i="6" aria-label="Provérbios Nosso de Cada Dia"><span class="band"></span><span class="sv"><b>Provérbios</b><i>nosso de cada dia</i></span><span class="band"></span><span class="sa">AB</span></button><button class="spine" type="button" style="--bg:#3B2A1F;--fg:#C1923A;--w:3.1rem;--h:14.5rem" aria-pressed="false" data-i="7" aria-label="Socialização Escolar a socialização que não deu certo"><span class="band"></span><span class="sv"><b>Socialização Escolar</b><i>Adna S. Barbosa</i></span><span class="band"></span><span class="sa">AB</span></button><span class="bookend" aria-hidden="true"></span><span class="typewriter inkset" aria-hidden="true" onclick="this.classList.toggle('up')"><svg viewBox="0 0 120 220">
+      <div class="unit u1"><div class="row" role="group" aria-label="Estante de livros, parte 1"><button class="spine" type="button" style="--bg:#B5603C;--fg:#EDE3D0;--w:3.6rem;--h:15.5rem" aria-pressed="true" data-i="0" aria-label="Gramática em Diagramas vol. 1"><span class="band"></span><span class="sv"><b>Gramática em Diagramas</b><i>vol. 1</i></span><span class="band"></span><span class="sa">AB</span></button><button class="spine" type="button" style="--bg:#8E4529;--fg:#EDE3D0;--w:3.6rem;--h:15.5rem" aria-pressed="false" data-i="1" aria-label="Gramática em Diagramas vol. 2"><span class="band"></span><span class="sv"><b>Gramática em Diagramas</b><i>vol. 2</i></span><span class="band"></span><span class="sa">AB</span></button><button class="spine" type="button" style="--bg:#C1923A;--fg:#2C2119;--w:3.1rem;--h:14rem" aria-pressed="false" data-i="2" aria-label="Mapas e Tabelas Gramática em Diagramas"><span class="band"></span><span class="sv"><b>Mapas e Tabelas</b><i>Gramática em Diagramas</i></span><span class="band"></span><span class="sa">AB</span></button><button class="spine" type="button" style="--bg:#79744A;--fg:#F5F0E6;--w:4.2rem;--h:16.5rem" aria-pressed="false" data-i="3" aria-label="Português em Mapas pela Bíblia"><span class="band"></span><span class="sv"><b>Português em Mapas</b><i>pela Bíblia</i></span><span class="band"></span><span class="sa">AB</span></button></div><div class="plank" aria-hidden="true"></div></div>
+      <div class="unit u2"><div class="row" role="group" aria-label="Estante de livros, parte 2"><button class="spine" type="button" style="--bg:#A3A07A;--fg:#2C2119;--w:3rem;--h:16.5rem" aria-pressed="false" data-i="4" aria-label="Caderno de Exercícios Português em Mapas"><span class="band"></span><span class="sv"><b>Caderno de Exercícios</b><i>Português em Mapas</i></span><span class="band"></span><span class="sa">AB</span></button><button class="spine" type="button" style="--bg:#7A4A2A;--fg:#EDE3D0;--w:3.4rem;--h:15rem" aria-pressed="false" data-i="5" aria-label="100 Provérbios para Diagramar"><span class="band"></span><span class="sv"><b>100 Provérbios</b><i>para Diagramar</i></span><span class="band"></span><span class="sa">AB</span></button><button class="spine" type="button" style="--bg:#D9C6A3;--fg:#2C2119;--w:3rem;--h:13.5rem" aria-pressed="false" data-i="6" aria-label="Provérbios Nosso de Cada Dia"><span class="band"></span><span class="sv"><b>Provérbios</b><i>nosso de cada dia</i></span><span class="band"></span><span class="sa">AB</span></button><button class="spine" type="button" style="--bg:#3B2A1F;--fg:#C1923A;--w:3.1rem;--h:14.5rem" aria-pressed="false" data-i="7" aria-label="Socialização Escolar a socialização que não deu certo"><span class="band"></span><span class="sv"><b>Socialização Escolar</b><i>Adna S. Barbosa</i></span><span class="band"></span><span class="sa">AB</span></button><span class="bookend" aria-hidden="true"></span><span class="typewriter inkset" aria-hidden="true" onclick="this.classList.toggle('up')"><svg viewBox="0 0 120 220">
   <g class="quill"><g transform="rotate(14 60 150)">
     <path d="M58 150 C 52 110, 50 70, 62 22 C 64 14, 70 8, 74 6 C 82 30, 84 70, 76 110 C 72 128, 66 140, 60 152 Z" fill="#D9C6A3"/>
     <path d="M62 150 C 60 110, 62 60, 74 6 C 82 30, 84 70, 76 110 C 72 128, 68 140, 62 152 Z" fill="#EADFCB"/>
@@ -453,8 +462,7 @@ footer .hand{font-size:1.4rem}
   <path d="M14 186 h92 M14 200 h92" stroke="#2C2119" stroke-width="1" opacity=".5"/>
   <text x="60" y="197" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-weight="600" font-size="11" fill="#2C2119" letter-spacing="1">AB</text>
   <path d="M104 186 v26" stroke="rgba(0,0,0,.18)" stroke-width="4"/>
-</svg></span></div>
-      <div class="plank" aria-hidden="true"></div>
+</svg></span></div><div class="plank" aria-hidden="true"></div></div>
     </div>
     <article class="pick" id="pick" aria-live="polite">
       <div class="pick-cover"><img id="pick-img" src="capas/gd1.jpg" alt="Capa do livro Gramática em Diagramas vol. 1"></div>
