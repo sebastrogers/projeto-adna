@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+</head>
+<body style="margin:0">
+<title>Adna Barbosa · Propostas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Mrs+Saint+Delafield&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap">
+<style>
+/* Layout: prancheta de comparação. Cada proposta é um quadro numerado (A–E para o nome, 1–4 para a estética), com uma linha de explicação embaixo. */
+:root{
+  --paper:#F5F0E6; --dot:#D6CAB4; --card:#FBF8F1; --beige:#EADFCB; --sand:#D9C6A3;
+  --ink:#2C2119; --ink-2:#6A5645; --brown:#7A4A2A; --ochre:#C1923A; --mark:rgba(214,170,77,.42); --clay:#A9694A;
+  --espresso:#3B2A1F; --map:#E9DDC4;
+  --hand:"Caveat","Bradley Hand",cursive; --sig:"Mrs Saint Delafield","Snell Roundhand",cursive;
+  --serif:"Cormorant Garamond","Garamond","Georgia",serif; --sans:"Open Sans","Segoe UI",system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);background-image:radial-gradient(var(--dot) 1.1px,transparent 1.3px);background-size:22px 22px;color:var(--ink);font-family:var(--sans);line-height:1.6;overflow-x:clip}
+.wrap{max-width:62rem;margin:0 auto;padding-inline:1.25rem;padding-block:2rem 4rem}
+h1,h2,h3{margin:0;line-height:1.1;text-wrap:balance}
+p{margin:0}
+.intro{display:grid;gap:.6rem;margin-bottom:2.5rem}
+.intro h1{font-size:clamp(1.8rem,5vw,2.6rem);font-weight:700}
+.intro p{color:var(--ink-2);max-width:42rem}
+.part{margin-top:3rem}
+.part > h2{font-size:1.05rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;border-bottom:2.5px solid var(--ink);padding-bottom:.4rem;margin-bottom:1.5rem;display:flex;align-items:baseline;gap:.75rem;flex-wrap:wrap}
+.part > h2 span{font-family:var(--hand);font-size:1.5rem;letter-spacing:0;text-transform:none;color:var(--clay);font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,27rem),1fr));gap:2rem}
+.opt{display:grid;gap:.7rem;min-width:0}
+.tag{display:flex;align-items:baseline;gap:.6rem}
+.tag b{display:grid;place-items:center;width:2rem;height:2rem;background:var(--ink);color:var(--paper);font-weight:800;transform:rotate(-4deg);box-shadow:2px 2px 0 var(--ochre);flex:none}
+.tag h3{font-size:1.1rem;font-weight:700}
+.opt > p{font-size:.92rem;color:var(--ink-2)}
+.stage{position:relative;border:2px solid var(--ink);background:var(--paper);background-image:radial-gradient(var(--dot) 1.1px,transparent 1.3px);background-size:18px 18px;min-height:15rem;display:grid;place-items:center;padding:2rem 1.25rem;overflow:hidden}
+.sub{font-family:var(--hand);font-weight:600;font-size:1.5rem;color:var(--clay);line-height:1}
+
+/* A · assinatura sobre a linha do diagrama */
+.nA{display:grid;justify-items:center;gap:.2rem}
+.nA .sig{font-family:var(--sig);font-size:clamp(3.6rem,10vw,5rem);line-height:.9;color:var(--brown);padding-inline:.2em;position:relative}
+.nA svg{width:min(100%,22rem);height:auto;margin-top:-.6rem}
+.nA .sub{margin-top:.2rem}
+
+/* B · serifa editorial */
+.nB{text-align:center;display:grid;gap:.55rem;justify-items:center}
+.nB .eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-2)}
+.nB .nm{font-family:var(--serif);font-weight:400;font-size:clamp(3rem,8.5vw,4.3rem);line-height:.95;color:var(--ink);letter-spacing:.01em}
+.nB .nm i{font-weight:500;color:var(--brown)}
+.nB .rule{display:flex;align-items:center;gap:.7rem;width:min(100%,18rem);color:var(--ochre)}
+.nB .rule::before,.nB .rule::after{content:"";flex:1;height:1px;background:var(--ochre)}
+.nB .rule span{font-size:.7rem}
+
+/* C · nome diagramado */
+.nC{width:100%;max-width:26rem}
+.nC svg{width:100%;height:auto;display:block}
+.nC .w{font-family:var(--serif);font-weight:500;font-size:46px;fill:var(--ink)}
+.nC .w.i{font-style:italic;fill:var(--brown)}
+.nC .h{font-family:var(--hand);font-size:24px;font-weight:600;fill:var(--clay)}
+.nC .l{stroke:var(--ink);stroke-width:2;fill:none;stroke-linecap:round}
+.nC .c{stroke:var(--clay);stroke-width:2.6}
+
+/* D · ex-libris, como o rótulo das capas */
+.nD{position:relative;display:grid;justify-items:center;gap:.15rem;padding:1.3rem 2.4rem 1.1rem;background:var(--card);border:1.5px solid var(--clay);border-radius:2.2rem / 1.4rem;box-shadow:0 0 0 5px var(--card),0 0 0 6.5px var(--sand)}
+.nD .ex{font-size:.62rem;font-weight:700;letter-spacing:.34em;text-transform:uppercase;color:var(--clay)}
+.nD .nm{font-family:var(--serif);font-size:clamp(2.4rem,7vw,3.2rem);font-weight:500;line-height:1;color:var(--ink)}
+.nD .nm span{font-family:var(--hand);font-weight:700;color:var(--brown);font-size:1.15em}
+.nD .pin{position:absolute;width:9px;height:9px;border:1.5px solid var(--clay);border-radius:50%;top:50%;margin-top:-4.5px}
+.nD .pin.l{left:.8rem}.nD .pin.r{right:.8rem}
+
+/* E · simples, com marca-texto */
+.nE{display:grid;gap:.4rem;justify-items:start;width:100%;max-width:26rem}
+.nE .nm{font-size:clamp(2.6rem,7.5vw,3.5rem);font-weight:600;letter-spacing:-.02em;line-height:1}
+.nE .nm span{background:linear-gradient(transparent 60%,var(--mark) 60%,var(--mark) 92%,transparent 92%)}
+.nE .nm em{font-style:normal;font-weight:300;color:var(--ink-2)}
+.nE .row{display:flex;align-items:center;gap:.5rem}
+.nE .row svg{width:2.2rem;color:var(--clay)}
+
+/* ---------- estéticas ---------- */
+.mock{border:2px solid var(--ink);overflow:hidden;font-size:.8rem}
+.mock .bar{display:flex;align-items:center;justify-content:space-between;gap:.6rem;padding:.5rem .8rem}
+.mono{display:grid;place-items:center;width:1.7rem;height:1.7rem;background:var(--ink);color:var(--paper);font-weight:800;font-size:.68rem;transform:rotate(-4deg);box-shadow:2px 2px 0 var(--ochre);flex:none}
+.links{display:flex;gap:.6rem;font-size:.66rem;font-weight:600;color:var(--ink-2);flex-wrap:wrap;justify-content:flex-end}
+.mock .body{padding:1.3rem 1rem 1.4rem;display:grid;gap:.9rem}
+.mini-books{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem}
+.mini-books img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;max-width:100%}
+
+/* 1 caderno pontilhado (atual) */
+.m1{background:var(--paper);background-image:radial-gradient(var(--dot) 1px,transparent 1.2px);background-size:14px 14px}
+.m1 .bar{border-bottom:2px solid var(--ink);box-shadow:0 2px 0 var(--ochre);background:var(--paper)}
+.m1 .box{border:1.5px solid var(--ink);outline:2px solid var(--ochre);outline-offset:3px;background:var(--card);padding:.7rem;margin:4px}
+.m1 h4{font-family:var(--hand);font-size:2.2rem;color:var(--brown);margin:0;line-height:1}
+.m1 .mini-books img{border:1.5px solid var(--ink);box-shadow:2px 2px 0 var(--sand)}
+
+/* 2 biblioteca clássica */
+.m2{background:var(--espresso);color:var(--paper)}
+.m2 .bar{border-bottom:1px solid rgba(193,146,58,.5)}
+.m2 .links{color:var(--sand)}
+.m2 .mono{background:var(--ochre);color:var(--espresso);box-shadow:2px 2px 0 var(--paper)}
+.m2 .body{text-align:center;justify-items:center}
+.m2 .ey{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ochre)}
+.m2 h4{font-family:var(--serif);font-weight:400;font-size:2.4rem;margin:0;line-height:1}
+.m2 h4 i{color:var(--ochre)}
+.m2 p{font-family:var(--serif);font-size:1.05rem;font-style:italic;color:var(--sand);max-width:20rem}
+.m2 .mini-books{width:100%}
+.m2 .mini-books img{border:1px solid var(--ochre);padding:3px;background:var(--espresso)}
+.m2 .btn2{border:1px solid var(--ochre);color:var(--ochre);padding:.3rem .9rem;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase}
+
+/* 3 editorial com foto */
+.m3{background:var(--card)}
+.m3 .bar{border-bottom:1px solid var(--sand)}
+.m3 .split{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:center}
+.m3 .split img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:sepia(.25);display:block;max-width:100%}
+.m3 h4{font-family:var(--serif);font-weight:500;font-size:2.3rem;margin:0;line-height:.95}
+.m3 .k{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--clay);font-weight:700}
+.m3 p{font-family:var(--serif);font-size:1rem;color:var(--ink-2)}
+.m3 .hr{height:1px;background:var(--ink)}
+.m3 .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;font-size:.68rem;color:var(--ink-2)}
+.m3 .cols b{display:block;font-family:var(--serif);font-size:1rem;color:var(--ink)}
+
+/* 4 cartografia */
+.m4{background:var(--map);background-image:linear-gradient(rgba(122,74,42,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(122,74,42,.08) 1px,transparent 1px);background-size:26px 26px}
+.m4 .bar{border-bottom:1.5px dashed var(--brown)}
+.m4 .route{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}
+.m4 .route svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.m4 .stop{position:relative;background:var(--card);border:1.5px solid var(--clay);border-radius:12px;padding:.5rem;text-align:center;font-size:.68rem;color:var(--ink-2)}
+.m4 .stop b{display:block;font-family:var(--hand);font-size:1.25rem;color:var(--brown)}
+.m4 .label{justify-self:center;background:var(--card);border:2px solid var(--clay);border-radius:1.6rem / 1rem;padding:.6rem 1.4rem;text-align:center}
+.m4 .label h4{font-family:var(--hand);font-size:2.3rem;color:var(--brown);margin:0;line-height:1}
+.m4 .label span{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-2)}
+.m4 .compass{position:absolute;right:.8rem;top:3.2rem;width:42px;height:42px;opacity:.55}
+.foot{margin-top:3rem;padding:1.4rem;border:2px solid var(--ink);outline:3px solid var(--ochre);outline-offset:4px;background:var(--card);margin-inline:7px}
+.foot p{font-size:.95rem}
+.foot p + p{margin-top:.5rem;color:var(--ink-2)}
+</style>
+
+<div class="wrap">
+  <header class="intro">
+    <h1>Propostas para o site da Adna</h1>
+    <p>Cinco jeitos de escrever o nome dela na abertura (A a E) e quatro estéticas para o site inteiro (1 a 4). O cabeçalho com o monograma AB fica igual em todas. Me diga uma letra e um número, ou o que misturar.</p>
+  </header>
+
+  <section class="part" aria-labelledby="p-nome">
+    <h2 id="p-nome">O nome <span>na abertura do site</span></h2>
+    <div class="grid">
+
+      <article class="opt">
+        <div class="tag"><b>A</b><h3>Assinatura sobre o diagrama</h3></div>
+        <div class="stage">
+          <div class="nA">
+            <span class="sig">Adna Barbosa</span>
+            <svg viewBox="0 0 360 46" aria-hidden="true"><path d="M4 12 C 120 9, 240 14, 356 11" stroke="#2C2119" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M150 2 L 152 24" stroke="#A9694A" stroke-width="2.6" stroke-linecap="round"/><path d="M230 12 L 254 40 L 330 39" stroke="#2C2119" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <p class="sub">gramática, lógica e fé, no papel</p>
+          </div>
+        </div>
+        <p>O nome escrito como uma assinatura, apoiado na linha do diagrama de frases. É a mais pessoal e a mais delicada.</p>
+      </article>
+
+      <article class="opt">
+        <div class="tag"><b>B</b><h3>Serifa editorial</h3></div>
+        <div class="stage">
+          <div class="nB">
+            <span class="eyebrow">Escritora · Educadora</span>
+            <span class="nm">Adna <i>Barbosa</i></span>
+            <span class="rule"><span>✦</span></span>
+            <p class="sub">gramática, lógica e fé, no papel</p>
+          </div>
+        </div>
+        <p>Letra clássica de livro, fina e elegante. Combina com a educação clássica e com capas de editora.</p>
+      </article>
+
+      <article class="opt">
+        <div class="tag"><b>C</b><h3>O nome diagramado</h3></div>
+        <div class="stage">
+          <div class="nC">
+            <svg viewBox="0 0 420 200" role="img" aria-label="Diagrama: Adna ensina; o que? gramática, lógica e fé.">
+              <path class="l" d="M10 92 H 410"/><path class="l c" d="M150 48 V 112"/><path class="l c" d="M270 92 V 58"/>
+              <text class="w" x="22" y="80">Adna</text>
+              <text class="w i" x="166" y="80">ensina</text>
+              <text class="w" x="284" y="80" style="font-size:30px">o quê?</text>
+              <path class="l" d="M60 92 L 92 140 H 220"/>
+              <text class="h" x="100" y="132">Barbosa</text>
+              <path class="l" d="M300 92 L 322 128 H 410"/>
+              <text class="h" x="326" y="122" style="font-size:20px">gramática,</text>
+              <text class="h" x="326" y="152" style="font-size:20px">lógica e fé</text>
+            </svg>
+          </div>
+        </div>
+        <p>A apresentação inteira vira uma frase diagramada: “Adna ensina gramática, lógica e fé”. Mostra o método antes de qualquer explicação.</p>
+      </article>
+
+      <article class="opt">
+        <div class="tag"><b>D</b><h3>Rótulo de livro</h3></div>
+        <div class="stage">
+          <div class="nD">
+            <span class="pin l"></span><span class="pin r"></span>
+            <span class="ex">Ex libris</span>
+            <span class="nm"><span>Adna</span> Barbosa</span>
+            <p class="sub" style="font-size:1.25rem">gramática, lógica e fé, no papel</p>
+          </div>
+        </div>
+        <p>Um rótulo de bordas arredondadas, como o selo da capa de “Português em Mapas pela Bíblia”. Mistura a letra de livro com a letra à mão.</p>
+      </article>
+
+      <article class="opt">
+        <div class="tag"><b>E</b><h3>Simples, com marca-texto</h3></div>
+        <div class="stage">
+          <div class="nE">
+            <span class="nm"><span>Adna</span> <em>Barbosa</em></span>
+            <div class="row"><svg viewBox="0 0 40 24" aria-hidden="true"><path d="M3 4 C 6 16, 18 20, 34 16 M34 16 L 26 11 M34 16 L 27 22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg><p class="sub">gramática, lógica e fé, no papel</p></div>
+          </div>
+        </div>
+        <p>A mesma letra do resto do site, em tamanho normal, só com o marca-texto ocre. É a mais discreta e deixa a frase diagramada brilhar.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="part" aria-labelledby="p-est">
+    <h2 id="p-est">A estética <span>do site inteiro</span></h2>
+    <div class="grid">
+
+      <article class="opt">
+        <div class="tag"><b>1</b><h3>Caderno pontilhado (a atual)</h3></div>
+        <div class="mock m1">
+          <div class="bar"><span class="mono">AB</span><span class="links"><span>Livros</span><span>Cursos</span><span>Assista</span><span>Loja</span></span></div>
+          <div class="body">
+            <h4>Adna Barbosa</h4>
+            <div class="box"><span style="font-family:var(--hand);font-size:1.3rem">(nós) | vamos refletir</span></div>
+            <div class="mini-books"><img src="../capas/gd1.jpg" alt=""><img src="../capas/pemb.jpg" alt=""><img src="../capas/provdia.jpg" alt=""><img src="../capas/social.jpg" alt=""></div>
+          </div>
+        </div>
+        <p>Grade de pontos, molduras duplas, marca-texto e anotações à mão. Segue de perto os slides “Mapas mentais e a ilusão da matéria”.</p>
+      </article>
+
+      <article class="opt">
+        <div class="tag"><b>2</b><h3>Biblioteca clássica</h3></div>
+        <div class="mock m2">
+          <div class="bar"><span class="mono">AB</span><span class="links"><span>Livros</span><span>Cursos</span><span>Assista</span><span>Loja</span></span></div>
+          <div class="body">
+            <span class="ey">Escritora · Educadora</span>
+            <h4>Adna <i>Barbosa</i></h4>
+            <p>Gramática, lógica e fé para formar mentes que discernem.</p>
+            <div class="mini-books"><img src="../capas/gd1.jpg" alt=""><img src="../capas/pemb.jpg" alt=""><img src="../capas/provdia.jpg" alt=""><img src="../capas/social.jpg" alt=""></div>
+            <span class="btn2">Conheça os livros</span>
+          </div>
+        </div>
+        <p>Fundo café escuro, letra de livro e detalhes em ocre, como uma estante antiga. Mais sério e mais solene.</p>
+      </article>
+
+      <article class="opt">
+        <div class="tag"><b>3</b><h3>Editorial com foto</h3></div>
+        <div class="mock m3">
+          <div class="bar"><span class="mono">AB</span><span class="links"><span>Livros</span><span>Cursos</span><span>Assista</span><span>Loja</span></span></div>
+          <div class="body">
+            <div class="split">
+              <div style="display:grid;gap:.5rem"><span class="k">Escritora e educadora</span><h4>Adna Barbosa</h4><p>Ensino a língua pela Palavra.</p></div>
+              <img src="../capas/foto.jpg" alt="">
+            </div>
+            <div class="hr"></div>
+            <div class="cols"><span><b>8 livros</b>duas editoras</span><span><b>2 cursos</b>turmas ao vivo</span><span><b>Podcast</b>Feminina Mulher</span></div>
+          </div>
+        </div>
+        <p>Muito espaço em branco, a foto dela grande na abertura e títulos em serifa. Pede uma foto em boa resolução.</p>
+      </article>
+
+      <article class="opt">
+        <div class="tag"><b>4</b><h3>Cartografia</h3></div>
+        <div class="mock m4" style="position:relative">
+          <div class="bar"><span class="mono">AB</span><span class="links"><span>Livros</span><span>Cursos</span><span>Assista</span><span>Loja</span></span></div>
+          <svg class="compass" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="#7A4A2A" stroke-width="1.2"/><path d="M20 4 L 23 20 L 20 36 L 17 20 Z" fill="#A9694A"/><path d="M4 20 L 20 17 L 36 20 L 20 23 Z" fill="none" stroke="#7A4A2A"/></svg>
+          <div class="body">
+            <div class="label"><span>Escritora · Educadora</span><h4>Adna Barbosa</h4></div>
+            <div class="route">
+              <svg viewBox="0 0 300 60" preserveAspectRatio="none" aria-hidden="true"><path d="M40 30 C 90 0, 120 60, 150 30 S 220 0, 260 30" fill="none" stroke="#A9694A" stroke-width="2" stroke-dasharray="5 5"/></svg>
+              <div class="stop"><b>Livros</b>comece aqui</div>
+              <div class="stop"><b>Cursos</b>turmas ao vivo</div>
+              <div class="stop"><b>Assista</b>vídeos e podcast</div>
+            </div>
+          </div>
+        </div>
+        <p>Papel de mapa antigo, bússola e rotas tracejadas ligando as seções, como a capa de “Português em Mapas pela Bíblia”.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <div class="foot">
+    <p><b>Como escolher:</b> responda com uma letra e um número, por exemplo “A com 1” ou “B com 2”.</p>
+    <p>Dá para misturar: o nome de uma proposta com a estética de outra.</p>
+  </div>
+</div>
+
+</body>
+</html>

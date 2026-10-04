@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Adna Barbosa, escritora e educadora: livros, cursos, vídeos e podcast.">
+</head>
+<body style="margin:0">
+<title>Adna Barbosa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap">
+<style>
+/* Layout: o caderno pontilhado dos materiais da Adna. Fundo com grade de pontos, traço de nanquim, marca-texto ocre e anotações à mão com setas. Coluna central; títulos de seção "diagramados" (palavra | complemento). */
+:root{
+  --paper:#F5F0E6;     /* off-white do caderno */
+  --dot:#D6CAB4;       /* grade de pontos */
+  --card:#FBF8F1;
+  --beige:#EADFCB;
+  --sand:#D9C6A3;
+  --ink:#2C2119;       /* nanquim marrom-escuro */
+  --ink-2:#6A5645;
+  --brown:#7A4A2A;     /* acento: links e botões */
+  --ochre:#C1923A;     /* molduras e destaques, como nos slides */
+  --mark:rgba(214,170,77,.42); /* marca-texto */
+  --clay:#A9694A;
+  --olive:#79744A;
+  --on-dark:#FBF8F1;
+  --hand:"Caveat", "Bradley Hand", "Segoe Print", cursive;
+  --sans:"Open Sans", "Segoe UI", "Helvetica Neue", system-ui, sans-serif;
+  --measure:40rem;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background-color:var(--paper);background-image:radial-gradient(var(--dot) 1.1px,transparent 1.3px);background-size:22px 22px;color:var(--ink);font-family:var(--sans);font-size:1.02rem;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:clip}
+.wrap{max-width:56rem;margin:0 auto;padding-inline:1.25rem}
+a{color:var(--brown);text-underline-offset:.2em;text-decoration-thickness:1.5px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--ochre);outline-offset:4px;border-radius:3px}
+h1,h2,h3{font-family:var(--sans);margin:0;line-height:1.1;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}
+.mk{background:linear-gradient(100deg,transparent 2%,var(--mark) 4%,var(--mark) 96%,transparent 98%);background-size:100% 62%;background-position:0 75%;background-repeat:no-repeat;padding-inline:.12em;font-weight:600}
+.hand{font-family:var(--hand);font-weight:600;color:var(--ink-2);line-height:1.1}
+.frame{border:2px solid var(--ink);outline:3px solid var(--ochre);outline-offset:4px;background:var(--card)}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+
+/* topo */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:rgba(245,240,230,.95);backdrop-filter:blur(6px);border-bottom:2px solid var(--ink);box-shadow:0 3px 0 var(--ochre)}
+.bar{display:flex;align-items:center;gap:1rem 1.5rem;padding-block:.6rem;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:var(--ink);margin-right:auto}
+.mono{display:grid;place-items:center;width:2.4rem;height:2.4rem;background:var(--ink);color:var(--paper);font-weight:800;font-size:.95rem;letter-spacing:.02em;transform:rotate(-4deg);box-shadow:3px 3px 0 var(--ochre);text-shadow:1px 1px 0 var(--clay)}
+.bn{display:grid;line-height:1.05;font-weight:800;font-size:1rem;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.bn small{font-family:var(--hand);font-size:1.15rem;font-weight:600;letter-spacing:0;text-transform:none;color:var(--clay)}
+.nav{display:flex;gap:.15rem;align-items:center}
+.nav a{position:relative;color:var(--ink-2);text-decoration:none;font-size:.88rem;font-weight:600;padding:.3rem .55rem;white-space:nowrap}
+.nav a::after{content:"";position:absolute;left:.4rem;right:.4rem;bottom:.2rem;height:.45em;background:var(--mark);transform:scaleX(0);transform-origin:left;transition:transform .2s;z-index:-1}
+.nav a:hover,.nav a.on{color:var(--ink)}
+.nav a:hover::after,.nav a.on::after{transform:scaleX(1)}
+.shop{display:inline-flex;align-items:center;gap:.4rem;font-weight:700;font-size:.88rem;text-decoration:none;color:var(--paper);background:var(--brown);border:2px solid var(--ink);padding:.35rem .85rem;box-shadow:3px 3px 0 var(--ochre);transition:transform .15s,box-shadow .15s}
+.shop:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ochre)}
+.shop svg{width:1rem;height:1rem;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:780px){
+  .bar{padding-block:.5rem .4rem}
+  .nav{order:3;flex:1 0 100%;overflow-x:auto;scrollbar-width:none;margin-inline:-1.25rem;padding-inline:.9rem;border-top:1px dashed var(--sand);padding-top:.3rem}
+  .nav::-webkit-scrollbar{display:none}
+  .bn small{display:none}
+}
+/* abertura */
+.hero{padding-block:3.25rem 3rem;display:grid;gap:1.4rem}
+.kicker{font-size:.8rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+.hero{gap:1.4rem}
+.title{display:grid;justify-items:start;gap:1.1rem;margin-block:.6rem 2.4rem}
+.hero h1{position:relative;display:inline-flex;align-items:baseline;flex-wrap:wrap;gap:0 .32em;font-weight:300;line-height:1;color:var(--ink);background:var(--card);border:1.5px solid var(--ink);outline:1px solid var(--ochre);outline-offset:6px;padding:.32em .6em .38em;transform:rotate(-1deg);box-shadow:10px 10px 0 var(--beige)}
+.hero h1 .first{position:relative;font-family:var(--hand);font-weight:700;font-size:clamp(3.4rem,10vw,6rem);color:var(--brown);letter-spacing:0;line-height:.9;z-index:0}
+.hero h1 .first::after{content:"";position:absolute;left:-.08em;right:-.1em;bottom:.08em;height:.32em;background:var(--mark);z-index:-1;transform:rotate(-1.5deg);border-radius:2px}
+.hero h1 .last{font-size:clamp(1.5rem,4.6vw,2.7rem);text-transform:uppercase;letter-spacing:.3em;margin-right:-.3em}
+.hero h1::before{content:"";position:absolute;top:-.55rem;right:1.2rem;width:4.2rem;height:1.2rem;background:var(--mark);transform:rotate(6deg)}
+.title .sub{font-family:var(--hand);font-weight:600;font-size:clamp(1.5rem,4vw,2rem);line-height:1;color:var(--clay);padding-left:clamp(.5rem,6vw,3rem);display:flex;align-items:center;gap:.5rem}
+.title .sub svg{width:2.2rem;height:auto;color:var(--clay);flex:none}
+.lede{font-size:1.2rem;max-width:36rem}
+.rot{display:inline-grid;vertical-align:bottom}
+.rot span{grid-area:1/1;font-family:var(--hand);font-size:1.6em;font-weight:700;line-height:1;color:var(--brown);padding-inline:.1em}
+.rot span:not(:first-child){opacity:0}
+@media (prefers-reduced-motion: no-preference){
+  .rot span{animation:rot 9s infinite}
+  .rot span:nth-child(2){animation-delay:3s}
+  .rot span:nth-child(3){animation-delay:6s}
+  .rot span:first-child{animation-name:rot1}
+}
+@keyframes rot{0%{opacity:0;transform:translateY(.4em) rotate(-3deg)}4%,30%{opacity:1;transform:none}34%,100%{opacity:0;transform:translateY(-.4em) rotate(2deg)}}
+@keyframes rot1{0%,30%{opacity:1;transform:none}34%,96%{opacity:0;transform:translateY(-.4em)}100%{opacity:1;transform:none}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.board{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:2rem;align-items:center;margin-top:.5rem}
+@media (max-width:720px){.board{grid-template-columns:1fr}}
+.diagram{margin:6px;padding:1.1rem 1rem .9rem 1.6rem;background-color:var(--card);background-image:linear-gradient(90deg,transparent 1.05rem,rgba(169,105,74,.55) 1.05rem,rgba(169,105,74,.55) calc(1.05rem + 1.5px),transparent calc(1.05rem + 1.5px)),repeating-linear-gradient(transparent 0 25px,var(--sand) 25px 26px);background-position:0 0,0 14px}
+.diagram svg{width:100%;height:auto;display:block}
+.diagram .w{font-family:var(--hand);font-size:42px;font-weight:600;fill:var(--ink)}
+.diagram .g{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.12em;fill:var(--ink-2);text-transform:uppercase}
+.diagram .note{font-family:var(--hand);font-size:21px;fill:var(--clay)}
+.diagram .base{stroke:var(--ink);stroke-width:2.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.diagram .cut{stroke:var(--clay);stroke-width:3.4;fill:none;stroke-linecap:round}
+.diagram .arrow{stroke:var(--clay);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.diagram .trace{stroke:var(--ochre);stroke-width:7;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:.45;stroke-dasharray:900;stroke-dashoffset:900}
+@media (prefers-reduced-motion: no-preference){.diagram .trace{animation:draw 2.4s .4s ease-in-out forwards}}
+@keyframes draw{to{stroke-dashoffset:0}}
+.diagram figcaption{font-size:.85rem;color:var(--ink-2);margin-top:.35rem;padding-top:.5rem;background:var(--card);display:inline-block;padding-inline:.3rem}
+.diagram figcaption b{color:var(--ink)}
+.hero-side{display:grid;gap:1.1rem;justify-items:start}
+.hero-side .hand{font-size:1.5rem}
+.hero-side .hand svg{display:block;width:70px;height:auto;margin-top:.3rem;color:var(--clay)}
+.cta{display:flex;flex-wrap:wrap;gap:.7rem}
+.btn{display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1.15rem;border-radius:3px;font-weight:700;font-size:.92rem;text-decoration:none;border:2px solid var(--ink);transition:transform .15s,box-shadow .15s,background .15s}
+.btn.solid{background:var(--ink);color:var(--on-dark)}
+.btn.solid:hover{background:var(--brown);border-color:var(--brown)}
+.btn.line{background:var(--card);color:var(--ink);box-shadow:3px 3px 0 var(--ochre)}
+.btn.line:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--ochre)}
+
+/* seções */
+section{padding-block:3.5rem}
+.head{display:flex;align-items:flex-end;flex-wrap:wrap;margin-bottom:2.1rem;position:relative;padding-bottom:.4rem}
+.head::after{content:"";position:absolute;left:0;bottom:0;width:min(100%,26rem);height:2.5px;background:var(--ink)}
+.head h2{font-size:clamp(2rem,5vw,2.7rem);font-weight:700;padding-right:.9rem;position:relative}
+.head h2::after{content:"";position:absolute;right:0;top:10%;bottom:-.8rem;width:3px;background:var(--clay)}
+.head .pred{font-family:var(--hand);font-size:1.65rem;font-weight:600;color:var(--clay);padding-left:.9rem;line-height:1.1}
+
+/* sobre */
+.about{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr);gap:2.75rem;align-items:start}
+@media (max-width:680px){.about{grid-template-columns:1fr}.about .photo{justify-self:center}}
+.photo{margin:0;position:relative;width:100%;max-width:15rem}
+.photo .pic{margin:6px;padding:.6rem;}
+.photo img{display:block;width:100%;aspect-ratio:1;object-fit:cover;filter:sepia(.25) saturate(.85) contrast(1.02);max-width:100%}
+.photo figcaption{margin-top:.9rem;display:flex;align-items:flex-start;gap:.4rem}
+.photo figcaption svg{flex:none;width:34px;height:auto;color:var(--clay);margin-top:-.4rem}
+.photo figcaption span{font-family:var(--hand);font-size:1.4rem;color:var(--ink-2);line-height:1.05}
+.prose{max-width:var(--measure);display:grid;gap:1rem}
+.roles{margin-top:.8rem;width:100%;border-collapse:collapse;font-size:.92rem;background:var(--card);border:2px solid var(--ink)}
+.roles th,.roles td{padding:.6rem .8rem;border:1px solid var(--sand);text-align:left;vertical-align:top}
+.roles th{font-weight:700;width:34%;background:var(--beige)}
+.roles td{color:var(--ink-2)}
+
+/* livros */
+.press{margin-top:3rem}
+.press:first-of-type{margin-top:0}
+.press-head{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem 1rem;flex-wrap:wrap;margin-bottom:1.4rem}
+.press-head h3{font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.press-head h3 .hand{display:block;font-size:1.5rem;text-transform:none;letter-spacing:0;color:var(--clay);font-weight:600}
+.press-head a{font-size:.88rem;font-weight:700}
+.books{display:grid;grid-template-columns:repeat(auto-fill,minmax(9.75rem,1fr));gap:2rem 1.5rem}
+@media (max-width:560px){.books{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.75rem 1rem}}
+.book{display:flex;flex-direction:column;gap:.6rem;text-decoration:none;color:var(--ink)}
+.shot{aspect-ratio:4/5;max-width:100%;border:2px solid var(--ink);background:var(--beige);overflow:hidden;box-shadow:4px 4px 0 var(--sand);transition:transform .2s,box-shadow .2s}
+.shot img{display:block;width:100%;height:100%;object-fit:cover;max-width:100%}
+.shot.contain img{object-fit:contain;padding:.35rem}
+.book:hover .shot{transform:translate(-2px,-3px);box-shadow:7px 8px 0 var(--ochre)}
+.book .meta{font-size:.87rem;color:var(--ink-2);line-height:1.45}
+.book .meta b{display:block;color:var(--ink);font-weight:700;font-size:.92rem;margin-bottom:.15rem}
+.book .buy{font-size:.85rem;font-weight:700;color:var(--brown)}
+.book:hover .buy{text-decoration:underline;text-decoration-color:var(--ochre);text-decoration-thickness:2px}
+
+/* cursos */
+.courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:2.25rem}
+.course{margin:7px;padding:1.4rem 1.35rem;display:flex;flex-direction:column;gap:.75rem;min-width:0;position:relative}
+.course h3{font-size:1.45rem;font-weight:700}
+.course p{font-size:.96rem;color:var(--ink-2)}
+.course p b{color:var(--ink)}
+.status{align-self:flex-start;font-family:var(--hand);font-size:1.35rem;font-weight:700;color:var(--clay);line-height:1;transform:rotate(-2deg)}
+.course .btn{align-self:flex-start;margin-top:auto}
+.schedule{margin-top:1.75rem;display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;font-size:.93rem;color:var(--ink-2)}
+.pill{font-weight:700;color:var(--ink);background:var(--beige);border:1.5px solid var(--ink);border-radius:3px;padding:.15rem .6rem;font-size:.85rem}
+
+/* canais */
+.channels{list-style:none;padding:0;margin:0;border:2px solid var(--ink);background:var(--card)}
+.channels li + li{border-top:1px solid var(--sand)}
+.channels a{display:grid;grid-template-columns:2.6rem 8rem minmax(0,1fr) auto;gap:1rem;align-items:center;padding:.85rem 1rem;text-decoration:none;color:var(--ink);transition:background .15s}
+.channels a:hover{background:var(--beige)}
+.channels .ic{width:2.6rem;height:2.6rem;border:1.5px solid var(--ink);border-radius:50%;display:grid;place-items:center;background:var(--paper)}
+.channels .ic svg{width:1.2rem;height:1.2rem;stroke:var(--ink);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.channels .k{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.channels .v{font-weight:700;font-size:1.02rem;min-width:0}
+.channels .v small{display:block;font-weight:400;font-size:.86rem;color:var(--ink-2)}
+.channels .arr{font-weight:700;color:var(--brown)}
+.channels .star a{background:var(--mark)}
+.channels .star a:hover{background:rgba(214,170,77,.6)}
+.channels .star .tag{font-family:var(--hand);font-size:1.25rem;color:var(--clay);font-weight:700;white-space:nowrap}
+@media (max-width:560px){.channels a{grid-template-columns:2.6rem minmax(0,1fr) auto}.channels .k{display:none}.channels .star .tag{display:none}}
+
+
+/* assista e ouça */
+.media{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:1.75rem;align-items:start}
+@media (max-width:760px){.media{grid-template-columns:1fr}}
+.player{position:relative;border:2px solid var(--ink);background:var(--ink);box-shadow:5px 5px 0 var(--ochre);overflow:hidden}
+.player.video{aspect-ratio:16/9;max-width:100%}
+.player.audio{height:352px;background:var(--card)}
+.player iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.player .ph{position:absolute;inset:0;display:grid;place-content:center;gap:.4rem;text-align:center;padding:1rem;color:var(--paper);font-size:.9rem}
+.player.audio .ph{color:var(--ink-2)}
+.player .ph b{font-family:var(--hand);font-size:1.6rem;font-weight:700}
+.mlabel{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem 1rem;flex-wrap:wrap;margin-bottom:.8rem}
+.mlabel h3{font-size:1rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.mlabel a{font-size:.85rem;font-weight:700}
+.allch{margin-top:2.75rem}
+.allch > h3{font-family:var(--hand);font-size:1.7rem;font-weight:700;color:var(--clay);margin-bottom:.8rem}
+.watch{text-decoration:none;margin-top:.6rem;display:inline-flex;align-items:center;gap:.4rem;font-family:var(--sans);font-size:.85rem;font-weight:700;color:var(--ink);background:var(--card);border:2px solid var(--ink);padding:.3rem .75rem;cursor:pointer;box-shadow:2px 2px 0 var(--ochre)}
+.watch:hover{background:var(--mark)}
+.talks .player{margin-top:.8rem;max-width:36rem}
+/* palestras */
+.talks{list-style:none;padding:0;margin:0;display:grid;gap:0;border-left:2.5px solid var(--ink);margin-left:.5rem}
+.talks li{position:relative;padding:0 0 1.6rem 1.6rem}
+.talks li:last-child{padding-bottom:0}
+.talks li::before{content:"";position:absolute;left:-.62rem;top:.3rem;width:1rem;height:1rem;border-radius:50%;background:var(--ochre);border:2.5px solid var(--ink)}
+.talks .y{font-size:.78rem;font-weight:800;letter-spacing:.14em;color:var(--clay)}
+.talks h3{font-size:1.12rem;font-weight:700;line-height:1.3;margin:.15rem 0 .25rem}
+.talks h3 a{color:var(--ink);text-decoration-color:var(--ochre);text-decoration-thickness:2px}
+.talks h3 a:hover{color:var(--brown)}
+.talks p{font-size:.94rem;color:var(--ink-2)}
+.invite{margin-top:2.25rem;display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.25rem}
+.invite .hand{font-size:1.4rem}
+
+/* textos: fichas pautadas */
+.posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:1.75rem 1.5rem}
+.post{position:relative;text-decoration:none;color:var(--ink);display:grid;align-content:start;gap:.45rem;padding:1rem 1.15rem 1.3rem 1.6rem;border:1.5px solid var(--sand);background-color:var(--card);background-image:linear-gradient(90deg,transparent 1rem,rgba(169,105,74,.55) 1rem,rgba(169,105,74,.55) calc(1rem + 1.5px),transparent calc(1rem + 1.5px)),linear-gradient(var(--ochre),var(--ochre)),repeating-linear-gradient(transparent 0 27px,var(--beige) 27px 28.5px);background-size:auto,100% 2.5px,auto;background-repeat:repeat,no-repeat,repeat;background-position:0 0,0 3.05rem,0 3.1rem;box-shadow:4px 4px 0 var(--sand);transition:transform .2s,box-shadow .2s}
+.post:hover{transform:translate(-2px,-3px);box-shadow:6px 7px 0 var(--ochre)}
+.post .lab{font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);min-height:2rem;display:flex;align-items:center}
+.post h3{font-size:1.15rem;font-weight:700;line-height:1.2;margin-top:.35rem}
+.post p{font-family:var(--hand);font-size:1.32rem;line-height:28.5px;color:var(--ink-2)}
+
+
+/* loja */
+.store{margin:7px;padding:1.6rem 1.4rem;display:grid;gap:1.4rem}
+.store p.lead{max-width:var(--measure)}
+.slots{display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));gap:1rem}
+.slot{border:2px dashed var(--sand);padding:1rem;display:grid;gap:.3rem;background:var(--paper)}
+.slot b{font-weight:700}
+.slot span{font-size:.88rem;color:var(--ink-2)}
+.slot .hand{font-size:1.25rem;color:var(--clay)}
+.store .cta{gap:.7rem}
+/* contato */
+.contact{margin:7px;padding:2rem 1.5rem;display:grid;gap:1.1rem;justify-items:start;text-align:left}
+.contact .big{font-size:clamp(1.5rem,4.5vw,2rem);font-weight:700;line-height:1.15}
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:.7rem;font-size:clamp(1rem,3.5vw,1.2rem);font-weight:700}
+.mail span{user-select:all;word-break:break-all;background:var(--mark);padding:.25rem .55rem}
+.copy{font-family:var(--sans);font-size:.85rem;font-weight:700;background:var(--card);border:2px solid var(--ink);color:var(--ink);border-radius:3px;padding:.3rem .75rem;cursor:pointer;box-shadow:2px 2px 0 var(--ochre)}
+.copy:active{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ochre)}
+footer{padding-block:2.5rem 3rem;font-size:.88rem;color:var(--ink-2)}
+footer .wrap{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:1rem;border-top:2px solid var(--ink);padding-top:1.4rem}
+footer .hand{font-size:1.4rem}
+</style>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#inicio" aria-label="Adna Barbosa, início"><span class="mono" aria-hidden="true">AB</span><span class="bn">Adna Barbosa<small>escritora e educadora</small></span></a>
+    <nav class="nav" aria-label="Seções">
+      <a href="#sobre">Sobre</a>
+      <a href="#livros">Livros</a>
+      <a href="#cursos">Cursos</a>
+      <a href="#assista">Assista</a>
+      <a href="#palestras">Palestras</a>
+      <a href="#textos">Textos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="shop" href="#loja"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>Loja</a>
+  </div>
+</header>
+
+<main class="wrap" id="inicio">
+  <div class="hero">
+    <p class="kicker">Escritora · Educadora · Recife</p>
+    <div class="title"><h1><span class="first">Adna</span><span class="last">Barbosa</span></h1><p class="sub"><svg viewBox="0 0 40 24" aria-hidden="true"><path d="M3 4 C 6 16, 18 20, 34 16 M34 16 L 26 11 M34 16 L 27 22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>gramática, lógica e fé, no papel</p></div>
+    <p class="lede">Ensino <span class="rot" aria-hidden="true"><span>gramática</span><span>lógica</span><span>Bíblia</span></span><span class="sr">gramática, lógica e Bíblia</span> para que pais, adolescentes e jovens aprendam a <span class="mk">discernir o que é excelente</span>.</p>
+
+    <div class="board">
+      <figure class="diagram frame">
+        <svg viewBox="0 0 600 240" role="img" aria-label="Diagrama da frase 'Vamos refletir juntos': sujeito oculto nós, predicado vamos refletir, adjunto adverbial juntos.">
+          <path class="trace" d="M14 111 C 150 108, 400 113, 586 109 M300 111 L 342 172 L 480 170"/>
+          <path class="base" d="M14 111 C 150 108, 400 113, 586 109"/>
+          <path class="cut" d="M168 66 L 172 134"/>
+          <text class="w" x="38" y="96">(nós)</text>
+          <text class="w" x="196" y="96">vamos refletir</text>
+          <path class="base" d="M300 111 L 342 172 L 480 170"/>
+          <text class="w" x="356" y="160">juntos</text>
+          <text class="g" x="40" y="138">sujeito</text>
+          <text class="g" x="196" y="138">predicado</text>
+          <text class="g" x="356" y="198">adjunto adverbial</text>
+          <text class="note" x="18" y="32">sujeito oculto!</text>
+          <path class="arrow" d="M70 38 C 66 52, 64 60, 66 70 M60 62 L 66 72 L 72 62"/>
+          <text class="note" x="500" y="222" text-anchor="end">como? juntos.</text>
+          <path class="arrow" d="M506 216 C 528 210, 534 196, 512 182 M520 182 L 510 181 L 514 191"/>
+        </svg>
+        <figcaption><b>“Venham, vamos refletir juntos.”</b> Isaías 1:18, diagramada.</figcaption>
+      </figure>
+      <div class="hero-side">
+        <p class="hand">É assim que estudamos aqui: desenhando a frase para enxergar o pensamento.
+          <svg viewBox="0 0 70 40" aria-hidden="true"><path d="M62 4 C 40 8, 18 16, 8 34 M8 34 L 5 23 M8 34 L 18 31" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>
+        </p>
+        <div class="cta">
+          <a class="btn solid" href="#livros">Conheça os livros</a>
+          <a class="btn line" href="#cursos">Cursos abertos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="sobre" aria-labelledby="t-sobre">
+    <div class="head"><h2 id="t-sobre">Sobre</h2><span class="pred">quem escreve</span></div>
+    <div class="about">
+      <figure class="photo">
+        <div class="pic frame"><img src="data:image/jpeg;base64,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" alt="Adna Barbosa sentada em um balanço, ao ar livre, entre árvores" width="150" height="150"></div>
+        <figcaption><svg viewBox="0 0 34 30" aria-hidden="true"><path d="M30 28 C 22 26, 10 20, 6 4 M6 4 L 2 13 M6 4 L 12 11" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg><span>Adna, esposa e mãe educadora</span></figcaption>
+      </figure>
+      <div class="prose">
+        <p>Sou esposa, mãe educadora e escritora. Há anos ensino meus filhos em casa, e foi nessa rotina que nasceu o meu método: <span class="mk">diagramar frases para tornar visível a estrutura da língua</span> e, com ela, a estrutura do pensamento.</p>
+        <p>Nos meus livros, uno a análise morfossintática à teologia. Entendo a linguagem como dom de Deus, um reflexo, ainda que limitado, da ordem e da comunicação presentes na Trindade. Meu desejo é formar leitores atentos, que se comunicam com clareza e sabem separar a verdade do engano.</p>
+        <table class="roles">
+          <tr><th scope="row">Autora</th><td>Livros pela Classical Press e pela Voz que Clama</td></tr>
+          <tr><th scope="row">Professora</th><td>Cursos de diagramação de frases e de lógica</td></tr>
+          <tr><th scope="row">Palestrante</th><td>Expohomeschooling e Classical Cast</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="livros" aria-labelledby="t-livros">
+    <div class="head"><h2 id="t-livros">Livros</h2><span class="pred">para estudar a língua pela Palavra</span></div>
+
+    <div class="press">
+      <div class="press-head">
+        <h3>Classical Press <span class="hand">a coleção de gramática</span></h3>
+        <a href="https://loja.classicalpress.com.br/search?q=gram%C3%A1tica+em+diagramas" target="_blank" rel="noopener">Ver na loja da editora ↗</a>
+      </div>
+      <div class="books">
+        <a class="book" href="https://loja.classicalpress.com.br/produtos/gramatica-diagramas-vol-1/" target="_blank" rel="noopener">
+          <div class="shot"><img src="capas/gd1.jpg" alt="Capa do livro Gramática em Diagramas, volume 1" loading="lazy"></div>
+          <div class="meta"><b>Gramática em Diagramas, vol. 1</b>Guia de gramática para consulta rápida</div>
+          <span class="buy">Comprar ↗</span>
+        </a>
+        <a class="book" href="https://loja.classicalpress.com.br/produtos/gramatica-diagramas-vol-2/" target="_blank" rel="noopener">
+          <div class="shot"><img src="capas/gd2.jpg" alt="Capa do livro Gramática em Diagramas, volume 2" loading="lazy"></div>
+          <div class="meta"><b>Gramática em Diagramas, vol. 2</b>A continuação do guia, com construções mais complexas</div>
+          <span class="buy">Comprar ↗</span>
+        </a>
+        <a class="book" href="https://loja.classicalpress.com.br/produtos/gramatica-diagramas-mapas-tabelas-memorizacao/" target="_blank" rel="noopener">
+          <div class="shot"><img src="capas/gdmap.jpg" alt="Capa do livro Gramática em Diagramas: Mapas e Tabelas de Memorização" loading="lazy"></div>
+          <div class="meta"><b>Mapas e Tabelas de Memorização</b>Referência rápida para revisar o trivium</div>
+          <span class="buy">Comprar ↗</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="press">
+      <div class="press-head">
+        <h3>Voz que Clama <span class="hand">português pela Bíblia</span></h3>
+        <a href="https://www.vozqueclama.com.br/livros" target="_blank" rel="noopener">Ver todos na loja ↗</a>
+      </div>
+      <div class="books">
+        <a class="book" href="https://www.vozqueclama.com.br/livros/portugues-em-mapas-pela-biblia" target="_blank" rel="noopener">
+          <div class="shot"><img src="capas/pemb.jpg" alt="Capa do livro Português em Mapas pela Bíblia" loading="lazy"></div>
+          <div class="meta"><b>Português em Mapas pela Bíblia</b>O livro que abre a coleção</div>
+          <span class="buy">Comprar ↗</span>
+        </a>
+        <a class="book" href="https://www.vozqueclama.com.br/livros/portugues-em-mapas-pela-bibia-caderno-de-exercicios" target="_blank" rel="noopener">
+          <div class="shot"><img src="capas/pembcad.jpg" alt="Capa do livro Português em Mapas pela Bíblia: Caderno de Exercícios" loading="lazy"></div>
+          <div class="meta"><b>Caderno de Exercícios</b>Prática para acompanhar o livro. Também vendido em combo</div>
+          <span class="buy">Comprar ↗</span>
+        </a>
+        <a class="book" href="https://www.vozqueclama.com.br/livros/100-proverbios-para-diagramar" target="_blank" rel="noopener">
+          <div class="shot contain"><img src="capas/prov100.jpg" alt="Capa do livro 100 Provérbios para Diagramar" loading="lazy"></div>
+          <div class="meta"><b>100 Provérbios para Diagramar</b>Exercícios de diagramação com a sabedoria de Provérbios</div>
+          <span class="buy">Comprar ↗</span>
+        </a>
+        <a class="book" href="https://www.vozqueclama.com.br/livros/proverbios-nosso-de-cada-dia" target="_blank" rel="noopener">
+          <div class="shot"><img src="capas/provdia.jpg" alt="Capa do livro Provérbios Nosso de Cada Dia" loading="lazy"></div>
+          <div class="meta"><b>Provérbios Nosso de Cada Dia</b>Impresso ou em PDF</div>
+          <span class="buy">Comprar ↗</span>
+        </a>
+        <a class="book" href="https://www.vozqueclama.com.br/livros/socializacao-escolar-a-socializacao-que-nao-deu-certo" target="_blank" rel="noopener">
+          <div class="shot"><img src="capas/social.jpg" alt="Capa do livro Socialização Escolar: a socialização que não deu certo" loading="lazy"></div>
+          <div class="meta"><b>Socialização Escolar</b>Um olhar sobre a escola e a educação em família</div>
+          <span class="buy">Comprar ↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="cursos" aria-labelledby="t-cursos">
+    <div class="head"><h2 id="t-cursos">Cursos</h2><span class="pred">ao vivo, em turmas pequenas</span></div>
+    <div class="courses">
+      <article class="course frame">
+        <span class="status">começa em fevereiro de 2027</span>
+        <h3>A Arte de Discernir 2.0</h3>
+        <p><b>Falácias lógicas e discernimento cristão.</b> Um treinamento para adolescentes e jovens aprenderem a reconhecer pistas falsas, ataques pessoais, espantalhos e falsos dilemas. Baseado no livro <i>O Detetive de Falácias</i>.</p>
+        <a class="btn solid" href="https://www.vozqueclama.com.br/curso/a-arte-de-discernir-2-0-falacias-logicas-e-discernimento-cristao" target="_blank" rel="noopener">Garantir uma vaga ↗</a>
+      </article>
+      <article class="course frame">
+        <span class="status">inscrições abertas</span>
+        <h3>A Arte da Diagramação de Frases</h3>
+        <p>Aprenda a analisar e desenhar a estrutura lógica das frases em português, começando por orações de duas palavras até chegar às construções mais complexas.</p>
+        <a class="btn solid" href="https://www.vozqueclama.com.br/curso/curso-a-arte-da-diagramacao-de-frases-103" target="_blank" rel="noopener">Inscrever-se ↗</a>
+      </article>
+    </div>
+    <div class="schedule">Turmas online: <span class="pill">terças, 9h às 11h</span><span class="pill">quartas, 14h às 16h</span> Vagas limitadas.</div>
+  </section>
+
+  <section id="assista" aria-labelledby="t-assista">
+    <div class="head"><h2 id="t-assista">Assista</h2><span class="pred">e ouça, aqui mesmo</span></div>
+    <div class="media">
+      <div>
+        <div class="mlabel"><h3>YouTube · A Arte de Discernir</h3><a href="https://www.youtube.com/@aartedediscernir" target="_blank" rel="noopener">Abrir o canal ↗</a></div>
+        <div class="player video">
+          <div class="ph"><b>vídeos do canal</b><span>O player aparece aqui quando o site estiver no domínio próprio.</span><a class="btn line" style="justify-self:center;margin-top:.4rem" href="https://www.youtube.com/@aartedediscernir" target="_blank" rel="noopener">Assistir no YouTube ↗</a></div>
+          <iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=UUbDFojLQ1G-HnLH_pvxNnGA" title="Vídeos do canal A Arte de Discernir" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div>
+        <div class="mlabel"><h3>Podcast · Feminina Mulher</h3><a href="https://open.spotify.com/show/27B49ikh5DtUnhJEBFffkV" target="_blank" rel="noopener">Abrir no Spotify ↗</a></div>
+        <div class="player audio">
+          <div class="ph"><b>episódios do podcast</b><span>O player aparece aqui quando o site estiver no domínio próprio.</span><a class="btn solid" style="justify-self:center;margin-top:.4rem" href="https://open.spotify.com/show/27B49ikh5DtUnhJEBFffkV" target="_blank" rel="noopener">Ouvir no Spotify ↗</a></div>
+          <iframe src="https://open.spotify.com/embed/show/27B49ikh5DtUnhJEBFffkV?utm_source=generator" title="Podcast Feminina Mulher no Spotify" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="allch" id="canais">
+      <h3>todos os canais</h3>
+      <ul class="channels">
+      <li class="star"><a href="https://www.instagram.com/adnasb/" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".6"/></svg></span><span class="k">Instagram</span><span class="v">@adnasb<small>Bastidores da rotina, livros e crítica cultural</small></span><span class="tag">comece por aqui</span></a></li>
+      <li><a href="https://www.youtube.com/@aartedediscernir" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="M10 9.5v5l4.5-2.5z"/></svg></span><span class="k">YouTube</span><span class="v">A Arte de Discernir<small>Lógica, gramática e educação clássica</small></span><span class="arr" aria-hidden="true">↗</span></a></li>
+      <li><a href="https://open.spotify.com/show/27B49ikh5DtUnhJEBFffkV" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg></span><span class="k">Podcast</span><span class="v">Feminina Mulher<small>Fé, família e feminilidade</small></span><span class="arr" aria-hidden="true">↗</span></a></li>
+      <li><a href="https://www.femininamulher.com.br/" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 20l1-4L16 5l3 3L8 19z"/><path d="M14 7l3 3"/></svg></span><span class="k">Blog</span><span class="v">Feminina Mulher<small>Textos escritos desde 2014</small></span><span class="arr" aria-hidden="true">↗</span></a></li>
+      <li><a href="https://www.instagram.com/vozqueclamaeditora/" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 5h6a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H4zM20 5h-6a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h6z"/></svg></span><span class="k">Editora</span><span class="v">@vozqueclamaeditora<small>Lançamentos da Voz que Clama</small></span><span class="arr" aria-hidden="true">↗</span></a></li>
+      <li><a href="https://www.facebook.com/adnasb" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><path d="M14 8h2.5V4.5H14A3.5 3.5 0 0 0 10.5 8v2.5H8V14h2.5v6.5H14V14h2.5l.5-3.5h-3V8z"/></svg></span><span class="k">Facebook</span><span class="v">Adna Barbosa</span><span class="arr" aria-hidden="true">↗</span></a></li>
+      <li><a href="https://www.linkedin.com/in/adnasb/" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V17M8 7.5v.01M12 17v-6.5M12 13.5c0-2 4-3 4 0V17"/></svg></span><span class="k">LinkedIn</span><span class="v">Adna Barbosa</span><span class="arr" aria-hidden="true">↗</span></a></li>
+    </ul>
+    </div>
+  </section>
+
+  <section id="palestras" aria-labelledby="t-palestras">
+    <div class="head"><h2 id="t-palestras">Palestras</h2><span class="pred">e conversas</span></div>
+    <ul class="talks">
+      <li><span class="y">2024</span><h3><a href="https://www.youtube.com/watch?v=eg_tvEpCw3Q" target="_blank" rel="noopener">Como Cristo reconcilia homem e mulher ↗</a></h3><p>Classical Cast, episódio 41. Conversa com Nancy Pearcey sobre o livro <i>A guerra tóxica contra a masculinidade</i>.</p><button class="watch" type="button" data-yt="eg_tvEpCw3Q" aria-label="Assistir aqui: Como Cristo reconcilia homem e mulher">▶ Assistir aqui</button></li>
+      <li><span class="y">2023</span><h3><a href="https://www.youtube.com/watch?v=w92aFL1w_x4" target="_blank" rel="noopener">Português: Lógica na Sintaxe ↗</a></h3><p>Palestra no auditório da Expohomeschooling 2023, sobre a nossa rotina de estudos em casa.</p><button class="watch" type="button" data-yt="w92aFL1w_x4" aria-label="Assistir aqui: Português, Lógica na Sintaxe">▶ Assistir aqui</button></li>
+      <li><span class="y">2023</span><h3>Oficina Português em Mapas pela Bíblia</h3><p>Expohomeschooling 2023: o livro, o método e a rotina de estudos em casa.</p></li>
+    </ul>
+    <div class="invite">
+      <a class="btn line" href="#contato">Convide para palestrar</a>
+      <span class="hand">eventos de educação domiciliar, escolas e igrejas</span>
+    </div>
+  </section>
+
+  <section id="textos" aria-labelledby="t-textos">
+    <div class="head"><h2 id="t-textos">Textos</h2><span class="pred">do blog</span></div>
+    <div class="posts">
+      <a class="post" href="https://www.femininamulher.com.br/2025/08/primeiro-celular-aos-18-anos.html" target="_blank" rel="noopener"><span class="lab">2025 · Educação dos filhos</span><h3>Primeiro celular aos 18 anos</h3><p>Como nossa filha esperou e conquistou o próprio aparelho, com o salário do seu trabalho.</p></a>
+      <a class="post" href="https://www.femininamulher.com.br/2023/11/mulheres-invisiveis-tema-do-enem-2023.html" target="_blank" rel="noopener"><span class="lab">2023 · Maternidade</span><h3>Mulheres invisíveis</h3><p>Sobre o valor do trabalho de cuidado que ninguém vê.</p></a>
+      <a class="post" href="https://www.femininamulher.com.br/2022/11/para-uma-bela-garota.html" target="_blank" rel="noopener"><span class="lab">2022 · Carta</span><h3>Para uma bela garota</h3><p>Uma carta de aniversário sobre a beleza que vem de dentro.</p></a>
+      <a class="post" href="https://www.femininamulher.com.br/2018/12/carta-ao-meu-filho-nos-seus-10-anos.html" target="_blank" rel="noopener"><span class="lab">2018 · Carta</span><h3>Carta ao meu filho nos seus 10 anos</h3><p>O dia em que nasceu o João e, com ele, uma nova mãe.</p></a>
+    </div>
+  </section>
+
+  <section id="loja" aria-labelledby="t-loja">
+    <div class="head"><h2 id="t-loja">Loja</h2><span class="pred">tudo num só lugar, em breve</span></div>
+    <div class="store frame">
+      <p class="lead">Estamos preparando uma loja aqui no site para reunir os livros, os cadernos e os cursos da Adna. Por enquanto, as compras são feitas nas lojas das editoras.</p>
+      <div class="slots">
+        <div class="slot"><span class="hand">em preparação</span><b>Livros impressos</b><span>Coleções da Classical Press e da Voz que Clama</span></div>
+        <div class="slot"><span class="hand">em preparação</span><b>Materiais em PDF</b><span>Cadernos e estudos para baixar</span></div>
+        <div class="slot"><span class="hand">em preparação</span><b>Cursos</b><span>Inscrições nas turmas ao vivo</span></div>
+      </div>
+      <div class="cta">
+        <a class="btn solid" href="https://www.vozqueclama.com.br/" target="_blank" rel="noopener">Loja Voz que Clama ↗</a>
+        <a class="btn line" href="https://loja.classicalpress.com.br/search?q=gram%C3%A1tica+em+diagramas" target="_blank" rel="noopener">Loja Classical Press ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" aria-labelledby="t-contato">
+    <div class="head"><h2 id="t-contato">Contato</h2><span class="pred">para convites e parcerias</span></div>
+    <div class="contact frame">
+      <p class="big">Vamos conversar?</p>
+      <div class="mail"><span id="email">femininamulher@gmail.com</span><button class="copy" id="copy-email" type="button">Copiar e-mail</button></div>
+      <p>Ou mande uma mensagem pelo Instagram <a href="https://www.instagram.com/adnasb/" target="_blank" rel="noopener"><b>@adnasb</b></a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Adna Souza Barbosa</span>
+    <span class="hand">“O nobre projeta coisas nobres.” Isaías 32:8</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('copy-email').addEventListener('click', function(){
+  var btn=this, el=document.getElementById('email');
+  function done(){btn.textContent='Copiado!';setTimeout(function(){btn.textContent='Copiar e-mail'},2000)}
+  function fallback(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Selecionado: use Ctrl+C'}
+  try{navigator.clipboard.writeText(el.textContent).then(done,fallback)}catch(e){fallback()}
+});
+
+var noFrames=location.origin==='null'||/claude|anthropic|usercontent/i.test(location.hostname);
+if(noFrames){document.querySelectorAll('.player iframe').forEach(function(f){f.remove()});document.querySelectorAll('.player .ph b').forEach(function(b){b.textContent=b.textContent.replace('carregando…','')});}
+document.querySelectorAll('.watch').forEach(function(b){
+  if(noFrames){var a=document.createElement('a');a.className='watch';a.href='https://www.youtube.com/watch?v='+b.getAttribute('data-yt');a.target='_blank';a.rel='noopener';a.textContent='▶ Assistir no YouTube ↗';b.replaceWith(a);return;}
+  b.addEventListener('click',function(){
+    var id=b.getAttribute('data-yt');var w=document.createElement('div');w.className='player video';
+    w.innerHTML='<div class="ph"><b>carregando…</b><span>Se não aparecer, <a href="https://www.youtube.com/watch?v='+id+'" target="_blank" rel="noopener" style="color:var(--mark)">assista no YouTube ↗</a></span></div><iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1" title="Vídeo da palestra" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    b.replaceWith(w);
+  });
+});
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.nav a'));var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&map[e.target.id]){links.forEach(function(a){a.classList.remove('on')});map[e.target.id].classList.add('on')}})},{rootMargin:'-45% 0px -50% 0px'});
+  Object.keys(map).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)});
+})();
+</script>
+
+</body>
+</html>
